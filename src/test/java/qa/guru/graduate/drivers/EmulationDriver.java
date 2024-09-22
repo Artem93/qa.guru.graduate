@@ -8,6 +8,8 @@ import org.openqa.selenium.WebDriver;
 
 import javax.annotation.Nonnull;
 
+import static io.appium.java_client.remote.AutomationName.ANDROID_UIAUTOMATOR2;
+import static io.appium.java_client.remote.MobilePlatform.ANDROID;
 import static qa.guru.graduate.drivers.ConfigsDriver.getEmulationConfig;
 import static qa.guru.graduate.helpers.MobileAppUtils.getAppPath;
 import static qa.guru.graduate.helpers.MobileAppUtils.getAppiumServerUrl;
@@ -20,8 +22,8 @@ public class EmulationDriver implements WebDriverProvider {
         UiAutomator2Options options = new UiAutomator2Options();
 
         options
-                .setAutomationName(getEmulationConfig().getUiAutomator())
-                .setPlatformName(getEmulationConfig().getPlatform())
+                .setAutomationName(ANDROID_UIAUTOMATOR2)
+                .setPlatformName(ANDROID)
                 .setPlatformVersion(getEmulationConfig().getOSVersion())
                 .setDeviceName(getEmulationConfig().getDevice())
                 .setApp(getAppPath())

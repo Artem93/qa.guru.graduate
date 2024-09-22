@@ -5,7 +5,7 @@ import org.aeonbits.owner.Config.Sources;
 
 @Sources({
         "classpath:properties/${env}.properties",
-        "classpath:properties/pixel3.properties"
+        "classpath:properties/browserstack_pixel3.properties"
 })
 
 public interface BrowserstackConfig extends Config {
