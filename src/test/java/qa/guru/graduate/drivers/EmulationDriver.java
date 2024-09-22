@@ -10,7 +10,6 @@ import javax.annotation.Nonnull;
 
 import static io.appium.java_client.remote.AutomationName.ANDROID_UIAUTOMATOR2;
 import static io.appium.java_client.remote.MobilePlatform.ANDROID;
-import static qa.guru.graduate.drivers.ConfigsDriver.getEmulationConfig;
 import static qa.guru.graduate.helpers.MobileAppUtils.getAppPath;
 import static qa.guru.graduate.helpers.MobileAppUtils.getAppiumServerUrl;
 
@@ -24,11 +23,11 @@ public class EmulationDriver implements WebDriverProvider {
         options
                 .setAutomationName(ANDROID_UIAUTOMATOR2)
                 .setPlatformName(ANDROID)
-                .setPlatformVersion(getEmulationConfig().getOSVersion())
-                .setDeviceName(getEmulationConfig().getDevice())
+                .setPlatformVersion(ConfigsDriver.getEmulationConfig().getOSVersion())
+                .setDeviceName(ConfigsDriver.getEmulationConfig().getDevice())
                 .setApp(getAppPath())
-                .setAppPackage(getEmulationConfig().getAppPackage())
-                .setAppActivity(getEmulationConfig().getAppActivity());
+                .setAppPackage(ConfigsDriver.getEmulationConfig().getAppPackage())
+                .setAppActivity(ConfigsDriver.getEmulationConfig().getAppActivity());
 
         return new AndroidDriver(getAppiumServerUrl(), options);
     }

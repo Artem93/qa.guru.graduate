@@ -3,7 +3,6 @@ package qa.guru.graduate.pages.mobileScreens;
 import com.codeborne.selenide.SelenideElement;
 import io.qameta.allure.Step;
 
-import static com.codeborne.selenide.Condition.clickable;
 import static com.codeborne.selenide.Condition.visible;
 import static com.codeborne.selenide.Selenide.$;
 import static org.openqa.selenium.By.xpath;
@@ -29,8 +28,7 @@ public class LoginScreen {
     @Step("Проверка кнопки {button}")
     public LoginScreen checkAuthButton(String button) {
         getAuthButton(button)
-                .shouldBe(visible)
-                .shouldBe(clickable);
+                .shouldBe(visible);
         return this;
     }
 

@@ -8,13 +8,13 @@ import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.openqa.selenium.remote.DesiredCapabilities;
+import qa.guru.graduate.drivers.ConfigsDriver;
 import qa.guru.graduate.enums.LocationEnum;
 import qa.guru.graduate.helpers.Attachments;
 
 import java.util.Map;
 
 import static com.codeborne.selenide.Selenide.closeWebDriver;
-import static qa.guru.graduate.drivers.ConfigsDriver.getSystemConfig;
 
 public class WebTestBase {
     @BeforeAll
@@ -23,7 +23,7 @@ public class WebTestBase {
         Configuration.pageLoadStrategy = "eager";
         Configuration.baseUrl = "https://spb.hh.ru/";
 
-        if (LocationEnum.valueOf(getSystemConfig().getLocation().toUpperCase()) == LocationEnum.REMOTE) {
+        if (LocationEnum.valueOf(ConfigsDriver.getSystemConfig().getLocation().toUpperCase()) == LocationEnum.REMOTE) {
             Configuration.browser = System.getProperty("browser", "chrome:100.0").split(":")[0];
             Configuration.browserVersion = System.getProperty("browser", "chrome:100.0").split(":")[1];
             Configuration.remote = System.getProperty("remoteUrl");
