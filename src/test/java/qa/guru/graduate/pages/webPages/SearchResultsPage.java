@@ -2,6 +2,7 @@ package qa.guru.graduate.pages.webPages;
 
 import com.codeborne.selenide.ElementsCollection;
 import com.codeborne.selenide.SelenideElement;
+import io.qameta.allure.Step;
 import org.junit.jupiter.api.Assertions;
 import qa.guru.graduate.enums.EducationEnum;
 
@@ -21,6 +22,7 @@ public class SearchResultsPage {
     private static final SelenideElement selectedSalary = $("[name=\"salary\"][checked]");
 
 
+    @Step("Проверка отображения поискового запроса в тайтле {text}")
     public SearchResultsPage checkCommonTitleContainText(String text) {
         commonTitle
                 .shouldBe(visible)
@@ -28,6 +30,7 @@ public class SearchResultsPage {
         return this;
     }
 
+    @Step("Проверка, что в названиях всех вакансий есть поисковой запрос {text}")
     public SearchResultsPage checkAllVacancyTitlesContainText(String text) {
         for (SelenideElement element : titlesVacancy) {
             element.shouldHave(text(text));
@@ -35,11 +38,13 @@ public class SearchResultsPage {
         return this;
     }
 
+    @Step("Проверка, что в названии первой вакансии есть поисковой запрос {text}")
     public SearchResultsPage checkFirstVacancyTitleContainText(String text) {
         titlesVacancy.first().shouldHave(text(text));
         return this;
     }
 
+    @Step("Проверка, что выделен выбранный в расширенном поиске тип учёности {education}")
     public SearchResultsPage checkCheckedEducationCheckbox(EducationEnum education) {
         educationHigher.scrollIntoView(false);
         switch (education) {
@@ -50,6 +55,7 @@ public class SearchResultsPage {
         return this;
     }
 
+    @Step("Проверка, что выбрана указанная в расширенном поиске зарплата {salary}")
     public SearchResultsPage checkValueSelectedSalary(String salary) {
         Assertions.assertEquals(salary, selectedSalary.getValue());
         return this;

@@ -3,8 +3,7 @@ package qa.guru.graduate.pages.mobileScreens;
 import com.codeborne.selenide.SelenideElement;
 import io.qameta.allure.Step;
 
-import static com.codeborne.selenide.Condition.text;
-import static com.codeborne.selenide.Condition.visible;
+import static com.codeborne.selenide.Condition.*;
 import static com.codeborne.selenide.Selenide.$;
 import static org.openqa.selenium.By.id;
 import static qa.guru.graduate.helpers.Constants.*;
@@ -34,9 +33,11 @@ public class SupportScreen {
         return this;
     }
 
-    @Step("Проверка видимости кнопки 'Ещё'")
+    @Step("Проверка видимости и кликабелньности кнопки 'Ещё'")
     public SupportScreen checkMoreButtonVisible() {
-        moreButton.shouldBe(visible);
+        moreButton
+                .shouldBe(visible)
+                .shouldBe(clickable);
         return this;
     }
 
@@ -54,9 +55,11 @@ public class SupportScreen {
         return this;
     }
 
-    @Step("Проверка видимости кнопки прикрепления файла")
+    @Step("Проверка видимости и кликабелньности кнопки прикрепления файла")
     public SupportScreen checkAttachFileButtonVisible() {
-        attachFileButton.shouldBe(visible);
+        attachFileButton
+                .shouldBe(visible)
+                .shouldBe(clickable);
         return this;
     }
 
@@ -78,9 +81,11 @@ public class SupportScreen {
         return this;
     }
 
-    @Step("Проверка видимости кнопки отправки")
+    @Step("Проверка, что кнопка отправки видна, но некликабельна")
     public SupportScreen checkSendButtonVisible() {
-        sendButton.shouldBe(visible);
+        sendButton
+                .shouldBe(visible)
+                .shouldNotBe(clickable);
         return this;
     }
 

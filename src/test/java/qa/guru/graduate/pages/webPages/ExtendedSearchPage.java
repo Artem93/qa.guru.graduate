@@ -2,6 +2,7 @@ package qa.guru.graduate.pages.webPages;
 
 import com.codeborne.selenide.ElementsCollection;
 import com.codeborne.selenide.SelenideElement;
+import io.qameta.allure.Step;
 import qa.guru.graduate.enums.EducationEnum;
 import qa.guru.graduate.enums.SearchByEnum;
 
@@ -28,16 +29,25 @@ public class ExtendedSearchPage {
     private static final SelenideElement educationHigher =
             $("[data-qa=\"advanced-search__education-item-label_higher\"]");
 
+    @Step("Ввод запроса {keyWord} в инпут")
     public ExtendedSearchPage setKeyWord(String keyWord) {
         keyWordInput.setValue(keyWord);
         return this;
     }
 
+    @Step("Выбор первого варианта из списка поисковых предложений")
+    public ExtendedSearchPage clickFirstSuggestKeyWord() {
+        keyWordsSuggestList.first().click();
+        return this;
+    }
+
+    @Step("Ввод зарплаты {salary} в инпут")
     public ExtendedSearchPage setSalary(String salary) {
         salaryInput.setValue(salary);
         return this;
     }
 
+    @Step("Выбор типа поиска {searchBy}")
     public ExtendedSearchPage setSearchByCheckbox(SearchByEnum searchBy) {
         switch (searchBy) {
             case NAME_VACANCY -> searchInNameVacancyCheckbox.click();
@@ -47,6 +57,7 @@ public class ExtendedSearchPage {
         return this;
     }
 
+    @Step("Выбор степени учёности {education}")
     public ExtendedSearchPage setEducationCheckbox(EducationEnum education) {
         educationNotRequired.scrollTo();
         switch (education) {
@@ -57,6 +68,7 @@ public class ExtendedSearchPage {
         return this;
     }
 
+    @Step("Удаление всех регионов поиска")
     public ExtendedSearchPage removeAllRegions() {
         regionsAcross.first().scrollTo();
         for (SelenideElement el : regionsAcross) {
@@ -65,13 +77,9 @@ public class ExtendedSearchPage {
         return this;
     }
 
+    @Step("Клик по кнопке применения поиска")
     public ExtendedSearchPage clickSubmit() {
         submitButton.click();
-        return this;
-    }
-
-    public ExtendedSearchPage clickFirstSuggestKeyWord() {
-        keyWordsSuggestList.first().click();
         return this;
     }
 }

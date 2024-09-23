@@ -9,6 +9,7 @@ import org.junit.jupiter.params.provider.ValueSource;
 import qa.guru.graduate.pages.webPages.*;
 
 import static com.codeborne.selenide.Selenide.open;
+import static qa.guru.graduate.helpers.Constants.searchRequest;
 
 public class GeneralePageTests extends WebTestBase {
 
@@ -78,10 +79,10 @@ public class GeneralePageTests extends WebTestBase {
     void checkSearchResults() {
         open("");
         generalPage
-                .setSearchRequest("QA");
+                .setSearchRequest(searchRequest);
         modalLoginPage
                 .closeModalPage();
         searchResultsPage
-                .checkCommonTitleContainText("QA");
+                .checkCommonTitleContainText(searchRequest);
     }
 }

@@ -28,7 +28,7 @@ public class MobileTestBase {
             case BROWSERSTACK -> BrowserstackDriver.class.getName();
         };
         Configuration.browserSize = null;
-        Configuration.timeout = 30000;
+        Configuration.timeout = 20000;
     }
 
     @BeforeEach

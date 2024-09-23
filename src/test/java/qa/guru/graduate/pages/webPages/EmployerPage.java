@@ -15,11 +15,7 @@ public class EmployerPage {
     private static final SelenideElement employerSubtitle = $("[data-qa=\"employer-index-subtitle\"]");
     private static final SelenideElement publishVacancyButton = $("[data-qa=\"employer-index-publish-vacancy\"]");
 
-    private static SelenideElement getSpecialisationCheckbox(String specialisation) {
-        return $$("[data-qa=\"checkbox-container\"]").findBy(text(specialisation));
-    }
-
-    @Step
+    @Step("Проверка отображения заголовка на странице работодателя")
     public EmployerPage checkVisibleEmployerTitle() {
         employerTitle
                 .shouldHave(text(employerTitleText))
@@ -27,7 +23,7 @@ public class EmployerPage {
         return this;
     }
 
-    @Step
+    @Step("Проверка отображения подзаголовка на странице работодателя")
     public EmployerPage checkVisibleEmployerSubtitle() {
         employerSubtitle
                 .shouldHave(text(employerSubtitleText))
@@ -35,17 +31,11 @@ public class EmployerPage {
         return this;
     }
 
-    @Step
+    @Step("Проверка отображения кнопки публикации вакансии")
     public EmployerPage checkVisiblePublishVacancyButton() {
         publishVacancyButton
                 .shouldHave(text(publishVacancyButtonText))
                 .shouldBe(visible);
-        return this;
-    }
-
-    @Step
-    public EmployerPage clickSpecialisationCheckbox(String specialisation) {
-        getSpecialisationCheckbox(specialisation).click();
         return this;
     }
 }
