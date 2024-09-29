@@ -27,7 +27,7 @@ public class SupportScreenTests extends MobileTestBase {
     @Test
     @DisplayName("Проверка отображения экрана саппорта")
     @AllureId("34663")
-    void checkSupportScreen() {
+    void checkSupportScreenTest() {
         firstScreen
                 .clickSupportButton();
         supportScreen

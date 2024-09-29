@@ -34,7 +34,7 @@ public class GeneralePageTests extends WebTestBase {
     @Test
     @DisplayName("Проверка кнопок в хедере страницы")
     @AllureId("34664")
-    void checkMainHeaderBlock() {
+    void checkMainHeaderBlockTest() {
         open("");
         generalPage
                 .checkVisibleAreaSwitcher()
@@ -53,7 +53,7 @@ public class GeneralePageTests extends WebTestBase {
     @ValueSource(strings = {"Воронеж", "Гомель"})
     @DisplayName("Проверка смены города.")
     @AllureId("34666")
-    void checkChangeCity(String city) {
+    void checkChangeCityTest(String city) {
         open("");
         generalPage
                 .clickAreaSwitcher();
@@ -73,7 +73,7 @@ public class GeneralePageTests extends WebTestBase {
     @Test
     @DisplayName("Переход на страницу для работодателей")
     @AllureId("34667")
-    void checkMoveToEmployerPageByHeaderLink() {
+    void checkMoveToEmployerPageByHeaderLinkTest() {
         open("");
         generalPage
                 .clickEmployerElement();
@@ -91,7 +91,7 @@ public class GeneralePageTests extends WebTestBase {
     @Test
     @DisplayName("Проверка выполнения поискового запроса")
     @AllureId("34665")
-    void checkSearchResults() {
+    void checkSearchResultsTest() {
         open("");
         generalPage
                 .setSearchRequest(searchRequestQa);
