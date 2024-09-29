@@ -28,7 +28,7 @@ public class LoginScreenTests extends MobileTestBase {
     @Test
     @DisplayName("Проверка отображения списка методов логина")
     @AllureId("34662")
-    void checkListLoginMethods() {
+    void checkListLoginMethodsTest() {
         firstScreen
                 .clickNewUserButton();
         loginScreen

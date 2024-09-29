@@ -34,7 +34,7 @@ public class ExtendedSearchTests extends WebTestBase {
     @Test
     @DisplayName("Проверка результатов расширенного поиска")
     @AllureId("34658")
-    void checkMainHeaderBlock() {
+    void checkMainHeaderBlockTest() {
         open("/search/vacancy/advanced");
         extendedSearchPage
                 .specializationIsLoad()
@@ -56,7 +56,7 @@ public class ExtendedSearchTests extends WebTestBase {
     @EnumSource(EducationEnum.class)
     @DisplayName("Проверка применения настроек образования расширенного поиска")
     @AllureId("34687")
-    void checkApplyEducationSettingsExtendedSearch(EducationEnum education) {
+    void checkApplyEducationSettingsExtendedSearchTest(EducationEnum education) {
         open("/search/vacancy/advanced");
         extendedSearchPage
                 .specializationIsLoad()
@@ -77,7 +77,7 @@ public class ExtendedSearchTests extends WebTestBase {
     @Test
     @DisplayName("Проверка применения настроек зараплаты расширенного поиска")
     @AllureId("34660")
-    void checkApplySalarySettingsExtendedSearch() {
+    void checkApplySalarySettingsExtendedSearchTest() {
         open("/search/vacancy/advanced");
         extendedSearchPage
                 .specializationIsLoad()

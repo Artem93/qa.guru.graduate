@@ -25,7 +25,7 @@ public class FirstScreenTests extends MobileTestBase {
     @Test
     @DisplayName("Проверка отображения элементов на первой странице")
     @AllureId("34661")
-    void checkFirstScreenElements() {
+    void checkFirstScreenElementsTest() {
         firstScreen
                 .checkLogoImageVisible()
                 .checkTitleTextViewVisible()
