@@ -6,6 +6,7 @@ import io.qameta.allure.Step;
 import qa.guru.graduate.enums.EducationEnum;
 import qa.guru.graduate.enums.SearchByEnum;
 
+import static com.codeborne.selenide.Condition.visible;
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.$$;
 
@@ -29,6 +30,7 @@ public class ExtendedSearchPage {
             $("[data-qa=\"advanced-search__education-item-label_special_secondary\"]");
     private final SelenideElement educationHigher =
             $("[data-qa=\"advanced-search__education-item-label_higher\"]");
+    private final SelenideElement specialization = $("[data-qa=\"resumesearch__profroles-switcher\"]");
 
     @Step("Ввод запроса {keyWord} в инпут")
     public ExtendedSearchPage setKeyWord(String keyWord) {
@@ -81,6 +83,12 @@ public class ExtendedSearchPage {
     @Step("Клик по кнопке применения поиска")
     public ExtendedSearchPage clickSubmit() {
         submitButton.click();
+        return this;
+    }
+
+    @Step("Проверка, что специализации подгрузились")
+    public ExtendedSearchPage specializationIsLoad(){
+        specialization.shouldBe(visible);
         return this;
     }
 }

@@ -37,6 +37,7 @@ public class ExtendedSearchTests extends WebTestBase {
     void checkMainHeaderBlock() {
         open("/search/vacancy/advanced");
         extendedSearchPage
+                .specializationIsLoad()
                 .setKeyWord(searchRequestQa)
                 .clickFirstSuggestKeyWord()
                 .setSearchByCheckbox(NAME_VACANCY)
@@ -58,6 +59,7 @@ public class ExtendedSearchTests extends WebTestBase {
     void checkApplyEducationSettingsExtendedSearch(EducationEnum education) {
         open("/search/vacancy/advanced");
         extendedSearchPage
+                .specializationIsLoad()
                 .setKeyWord(searchRequestQa)
                 .setEducationCheckbox(education)
                 .removeAllRegions()
@@ -78,6 +80,7 @@ public class ExtendedSearchTests extends WebTestBase {
     void checkApplySalarySettingsExtendedSearch() {
         open("/search/vacancy/advanced");
         extendedSearchPage
+                .specializationIsLoad()
                 .setKeyWord(searchRequestQa)
                 .setSalary(salaryValue)
                 .removeAllRegions()

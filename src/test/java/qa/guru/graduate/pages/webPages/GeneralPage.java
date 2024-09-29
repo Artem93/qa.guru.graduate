@@ -11,25 +11,25 @@ import static qa.guru.graduate.helpers.Constants.*;
 public class GeneralPage {
 
     private final SelenideElement headerBlock = $("[data-sentry-component=\"SupernovaOverlayMenu\"]");
-    private final SelenideElement mainMenuAreaSwitcherHyperText = headerBlock.$("[data-qa=\"mainmenu_areaSwitcher\"]");
+    private final SelenideElement mainMenuAreaSwitcherButton = headerBlock.$("button[data-qa=\"mainmenu_areaSwitcher\"]");
     private final SelenideElement ApplicantText = headerBlock.$$("[data-sentry-component=\"MainContent\"]")
             .findBy(text(mainMenuApplicantText));
-    private final SelenideElement mainMenuEmployerHyperText = headerBlock.$("[data-qa=\"mainmenu_employer\"]");
-    private final SelenideElement mainMenuExpertResumeHyperText = headerBlock.$("[data-qa=\"mainmenu_expertresume\"]");
-    private final SelenideElement mainMenuApplicantServicesHyperText = headerBlock.$("[data-qa=\"mainmenu_applicantServices\"]");
-    private final SelenideElement searchInput = $("#a11y-search-input");
+    private final SelenideElement mainMenuEmployerHyperText = headerBlock.$("a[data-qa=\"mainmenu_employer\"]");
+    private final SelenideElement mainMenuExpertResumeHyperText = headerBlock.$("a[data-qa=\"mainmenu_expertresume\"]");
+    private final SelenideElement mainMenuApplicantServicesHyperText = headerBlock.$("a[data-qa=\"mainmenu_applicantServices\"]");
+    private final SelenideElement searchInput = $("input#a11y-search-input");
 
 
     @Step("Проверка отображения кнопки переключения локации")
     public GeneralPage checkVisibleAreaSwitcher() {
-        mainMenuAreaSwitcherHyperText
+        mainMenuAreaSwitcherButton
                 .shouldBe(visible);
         return this;
     }
 
     @Step("Проверка, что в кнопке переключения локации выбран город {city}")
     public GeneralPage checkAreaSwitcherContainCity(String city) {
-        mainMenuAreaSwitcherHyperText
+        mainMenuAreaSwitcherButton
                 .shouldBe(visible)
                 .shouldHave(text(city));
         return this;
@@ -37,7 +37,7 @@ public class GeneralPage {
 
     @Step("Клик по кнопке переключения локации")
     public GeneralPage clickAreaSwitcher() {
-        mainMenuAreaSwitcherHyperText
+        mainMenuAreaSwitcherButton
                 .click();
         return this;
     }
