@@ -15,8 +15,7 @@ import qa.guru.graduate.pages.webPages.SearchResultsPage;
 
 import static com.codeborne.selenide.Selenide.open;
 import static qa.guru.graduate.enums.SearchByEnum.NAME_VACANCY;
-import static qa.guru.graduate.helpers.Constants.salaryValue;
-import static qa.guru.graduate.helpers.Constants.searchRequest;
+import static qa.guru.graduate.helpers.Constants.*;
 
 @Epic("Web tests")
 @Feature("Extended Search")
@@ -36,13 +35,13 @@ public class ExtendedSearchTests extends WebTestBase {
     void checkMainHeaderBlock() {
         open("/search/vacancy/advanced");
         extendedSearchPage
-                .setKeyWord(searchRequest)
+                .setKeyWord(searchRequestQa)
                 .clickFirstSuggestKeyWord()
                 .setSearchByCheckbox(NAME_VACANCY)
                 .removeAllRegions()
                 .clickSubmit();
         searchResultsPage
-                .checkAllVacancyTitlesContainText(searchRequest);
+                .checkAllVacancyTitlesContainText(vacancyTagsQA);
     }
 
     @Tags({
@@ -56,12 +55,12 @@ public class ExtendedSearchTests extends WebTestBase {
     void checkApplyEducationSettingsExtendedSearch(EducationEnum education) {
         open("/search/vacancy/advanced");
         extendedSearchPage
-                .setKeyWord(searchRequest)
+                .setKeyWord(searchRequestQa)
                 .setEducationCheckbox(education)
                 .removeAllRegions()
                 .clickSubmit();
         searchResultsPage
-                .checkFirstVacancyTitleContainText(searchRequest)
+                .checkFirstVacancyTitleContainText(searchRequestQa)
                 .checkCheckedEducationCheckbox(education);
     }
 
@@ -75,7 +74,7 @@ public class ExtendedSearchTests extends WebTestBase {
     void checkApplySalarySettingsExtendedSearch() {
         open("/search/vacancy/advanced");
         extendedSearchPage
-                .setKeyWord(searchRequest)
+                .setKeyWord(searchRequestQa)
                 .setSalary(salaryValue)
                 .removeAllRegions()
                 .clickSubmit();

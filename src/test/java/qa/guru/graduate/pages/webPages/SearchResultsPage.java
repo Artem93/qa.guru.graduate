@@ -32,9 +32,9 @@ public class SearchResultsPage {
     }
 
     @Step("Проверка, что в названиях всех вакансий есть поисковой запрос {text}")
-    public SearchResultsPage checkAllVacancyTitlesContainText(String text) {
+    public SearchResultsPage checkAllVacancyTitlesContainText(String[] text) {
         for (SelenideElement element : titlesVacancy) {
-            element.shouldHave(text(text));
+            element.shouldHave(oneOfTexts(text));
         }
         return this;
     }

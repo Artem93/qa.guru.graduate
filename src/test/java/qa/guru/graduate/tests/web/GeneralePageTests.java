@@ -12,7 +12,7 @@ import org.junit.jupiter.params.provider.ValueSource;
 import qa.guru.graduate.pages.webPages.*;
 
 import static com.codeborne.selenide.Selenide.open;
-import static qa.guru.graduate.helpers.Constants.searchRequest;
+import static qa.guru.graduate.helpers.Constants.searchRequestQa;
 
 @Epic("Web tests")
 @Feature("General page elements")
@@ -89,10 +89,10 @@ public class GeneralePageTests extends WebTestBase {
     void checkSearchResults() {
         open("");
         generalPage
-                .setSearchRequest(searchRequest);
+                .setSearchRequest(searchRequestQa);
         modalLoginPage
                 .closeModalPage();
         searchResultsPage
-                .checkCommonTitleContainText(searchRequest);
+                .checkCommonTitleContainText(searchRequestQa);
     }
 }
