@@ -1,22 +1,36 @@
-# Проект автоматизации тестирования ресурса HeadHunter
+# Проект автоматизации тестирования сервиса HeadHunter
 
 ## Содержание
 1. [Описание](#описание)
-2. [Использованные Технологии и инструменты](#использованные-технологии-и-инструменты)
-3. [Запуск тестов](#запуск-тестов)
+2. [Ссылки](#ссылки)
+3. [Использованные Технологии и инструменты](#использованные-технологии-и-инструменты)
+4. [Запуск тестов](#запуск-тестов)
    - [Локальный запуск тестов](#локальный-запуск-тестов)
    - [Параметры web тестов](#параметры-web-тестов)
    - [Параметры android тестов](#параметры-android-тестов)
    - [Сборка тестов в Jenkins](#сборка-тестов-в-jenkins)
-4. [Интеграции](#интеграции)
+5. [Интеграции](#интеграции)
    - [Интеграция с Allure report](#интеграция-с-allure-report)
    - [Интеграция с Allure TestOps](#интеграция-с-allure-testops)
-   - [Уведомления в Telegram](#уведомления-в-telegram)
-5. [Технические особенности](#технические-особенности)
+   - [Уведомления в Telegram](#уведомления-в-telegram-с-использованием-бота)
+6. [Технические особенности](#технические-особенности)
 
 ## Описание
 
-Проект позволяет запускать Web/ API/ Android тесты сервиса headhunter. Headhunter - сервис, который помогает найти работу и подобрать персонал. <br/>
+Данный проект направлен на автоматизацию Web/ API/ Android тестов для сервиса headhunter.  <br/>
+Headhunter - сервис, который помогает найти работу и подобрать персонал. <br/>
+
+## Ссылки
+
+### Jenkins: 
+- Джоба запуска [api автотестов](https://jenkins.autotests.cloud/view/ArtemLe/job/ArtemLeHH%20api/)
+- Джоба запуска [android автотестов](https://jenkins.autotests.cloud/view/ArtemLe/job/ArtemLeHH%20Mobile/)
+- Джоба запуска [web автотестов](https://jenkins.autotests.cloud/view/ArtemLe/job/ArtemLeHH%20web/)
+
+### Test ops
+- Проект [api автотестов](https://allure.autotests.cloud/project/4451)
+- Проект [android автотестов](https://allure.autotests.cloud/project/4452)
+- Проект [web автотестов](https://allure.autotests.cloud/project/4450/dashboards)
 
 ## Использованные Технологии и инструменты
 
@@ -101,7 +115,7 @@ gradle allureServe
 
 </details>
 
-### Cборка тестов в Jenkins
+### Сборка тестов в Jenkins
 >#### <b><a target="_blank" href="https:/jenkins.autotests.cloud/view/ArtemLe/job/ArtemLe_HH_web/">Web</a></b>
 > Для запуска сборки необходимо перейти в раздел `Build with Parameters`, если требуется выбрать нужные параметры
 > BROWSER или RESOLUTION и нажать кнопку `Build`
