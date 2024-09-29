@@ -1,5 +1,8 @@
 package qa.guru.graduate.tests.web;
 
+import io.qameta.allure.Epic;
+import io.qameta.allure.Feature;
+import io.qameta.allure.Owner;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Tags;
@@ -11,6 +14,8 @@ import qa.guru.graduate.pages.webPages.*;
 import static com.codeborne.selenide.Selenide.open;
 import static qa.guru.graduate.helpers.Constants.searchRequest;
 
+@Epic("Web tests")
+@Feature("General page elements")
 public class GeneralePageTests extends WebTestBase {
 
     private final GeneralPage generalPage = new GeneralPage();
@@ -23,6 +28,7 @@ public class GeneralePageTests extends WebTestBase {
             @Tag("web"),
             @Tag("all")
     })
+    @Owner("Artem Lepkin")
     @Test
     @DisplayName("Проверка кнопок в хедере страницы")
     void checkMainHeaderBlock() {
@@ -39,6 +45,7 @@ public class GeneralePageTests extends WebTestBase {
             @Tag("web"),
             @Tag("all")
     })
+    @Owner("Artem Lepkin")
     @ParameterizedTest(name = "Смена города на {0}")
     @ValueSource(strings = {"Воронеж", "Гомель"})
     @DisplayName("Проверка смены города")
@@ -58,6 +65,7 @@ public class GeneralePageTests extends WebTestBase {
             @Tag("web"),
             @Tag("all")
     })
+    @Owner("Artem Lepkin")
     @Test
     @DisplayName("Переход на страницу для работодателей")
     void checkMoveToEmployerPageByHeaderLink() {
@@ -74,6 +82,7 @@ public class GeneralePageTests extends WebTestBase {
             @Tag("web"),
             @Tag("all")
     })
+    @Owner("Artem Lepkin")
     @Test
     @DisplayName("Проверка выполнения поискового запроса")
     void checkSearchResults() {

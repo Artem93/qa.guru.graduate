@@ -10,14 +10,14 @@ import static qa.guru.graduate.helpers.Constants.*;
 
 public class GeneralPage {
 
-    private static final SelenideElement headerBlock = $("[data-sentry-component=\"SupernovaOverlayMenu\"]");
-    private static final SelenideElement mainMenuAreaSwitcherHyperText = headerBlock.$("[data-qa=\"mainmenu_areaSwitcher\"]");
-    private static final SelenideElement ApplicantText = headerBlock.$$("[data-sentry-component=\"MainContent\"]")
+    private final SelenideElement headerBlock = $("[data-sentry-component=\"SupernovaOverlayMenu\"]");
+    private final SelenideElement mainMenuAreaSwitcherHyperText = headerBlock.$("[data-qa=\"mainmenu_areaSwitcher\"]");
+    private final SelenideElement ApplicantText = headerBlock.$$("[data-sentry-component=\"MainContent\"]")
             .findBy(text(mainMenuApplicantText));
-    private static final SelenideElement mainMenuEmployerHyperText = headerBlock.$("[data-qa=\"mainmenu_employer\"]");
-    private static final SelenideElement mainMenuExpertResumeHyperText = headerBlock.$("[data-qa=\"mainmenu_expertresume\"]");
-    private static final SelenideElement mainMenuApplicantServicesHyperText = headerBlock.$("[data-qa=\"mainmenu_applicantServices\"]");
-    private static final SelenideElement searchInput = $("#a11y-search-input");
+    private final SelenideElement mainMenuEmployerHyperText = headerBlock.$("[data-qa=\"mainmenu_employer\"]");
+    private final SelenideElement mainMenuExpertResumeHyperText = headerBlock.$("[data-qa=\"mainmenu_expertresume\"]");
+    private final SelenideElement mainMenuApplicantServicesHyperText = headerBlock.$("[data-qa=\"mainmenu_applicantServices\"]");
+    private final SelenideElement searchInput = $("#a11y-search-input");
 
 
     @Step("Проверка отображения кнопки переключения локации")

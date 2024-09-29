@@ -16,7 +16,7 @@ public class ResumeSteps {
         return given(requestSpec)
                 .header("Authorization", bearer)
                 .header("content-type", "application/json")
-                .header("HH-User-Agent", "QaGuruDiploma/1.0 (artegor93@mail.com)")
+                .header("HH-User-Agent", "QaGuruDiploma/1.0 (test@mail.com)")
                 .when()
                 .get("resumes/mine")
                 .then()
@@ -26,15 +26,16 @@ public class ResumeSteps {
 
     @Step("Создание резюме")
     public ResumeSteps createResume(ResumeModel expectedResume) {
-        given(requestSpec)
+        var a = given(requestSpec)
                 .body(expectedResume)
                 .header("Authorization", bearer)
                 .header("content-type", "application/json")
-                .header("HH-User-Agent", "QaGuruDiploma/1.0 (artegor93@mail.com)")
+                .header("HH-User-Agent", "QaGuruDiploma/1.0 (test@mail.com)")
                 .when()
                 .post("resumes")
                 .then()
-                .spec(response201Spec);
+                .spec(response201Spec)
+                .extract().body().asString();
         return this;
     }
 
@@ -43,7 +44,7 @@ public class ResumeSteps {
         given(requestSpec)
                 .header("Authorization", bearer)
                 .header("content-type", "application/json")
-                .header("HH-User-Agent", "QaGuruDiploma/1.0 (artegor93@mail.com)")
+                .header("HH-User-Agent", "QaGuruDiploma/1.0 (test@mail.com)")
                 .when()
                 .delete("resumes/" + id)
                 .then()

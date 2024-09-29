@@ -10,23 +10,24 @@ import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.$$;
 
 public class ExtendedSearchPage {
-    private static final SelenideElement keyWordInput = $("[data-qa=\"vacancysearch__keywords-input\"]");
-    private static final SelenideElement searchInNameVacancyCheckbox =
-            $("[data-qa=\"control-vacancysearch__search_field-item control-vacancysearch__search_field-item_name\"]").parent();
-    private static final SelenideElement searchInNameCompanyCheckbox =
-            $("[data-qa=\"control-vacancysearch__search_field-item control-vacancysearch__search_field-item_company_name\"]").parent();
-    private static final SelenideElement searchInDescriptionVacancyCheckbox =
-            $("[data-qa=\"control-vacancysearch__search_field-item control-vacancysearch__search_field-item_description\"]").parent();
-    private static final ElementsCollection regionsAcross = $$("[data-qa=\"bloko-tag__cross\"]");
-    private static final SelenideElement submitButton = $("[data-qa=\"advanced-search-submit-button\"]");
-    private static final ElementsCollection keyWordsSuggestList = $$(".suggest__item");
-    private static final SelenideElement salaryInput = $("[data-qa=\"advanced-search-salary\"]");
 
-    private static final SelenideElement educationNotRequired =
+    private final SelenideElement keyWordInput = $("[data-qa=\"vacancysearch__keywords-input\"]");
+    private final SelenideElement searchInNameVacancyCheckbox =
+            $("[data-qa=\"control-vacancysearch__search_field-item control-vacancysearch__search_field-item_name\"]").parent();
+    private final SelenideElement searchInNameCompanyCheckbox =
+            $("[data-qa=\"control-vacancysearch__search_field-item control-vacancysearch__search_field-item_company_name\"]").parent();
+    private final SelenideElement searchInDescriptionVacancyCheckbox =
+            $("[data-qa=\"control-vacancysearch__search_field-item control-vacancysearch__search_field-item_description\"]").parent();
+    private final ElementsCollection regionsAcross = $$("[data-qa=\"bloko-tag__cross\"]");
+    private final SelenideElement submitButton = $("[data-qa=\"advanced-search-submit-button\"]");
+    private final ElementsCollection keyWordsSuggestList = $$(".suggest__item");
+    private final SelenideElement salaryInput = $("[data-qa=\"advanced-search-salary\"]");
+
+    private final SelenideElement educationNotRequired =
             $("[data-qa=\"advanced-search__education-item-label_not_required_or_not_specified\"]");
-    private static final SelenideElement educationSpecial =
+    private final SelenideElement educationSpecial =
             $("[data-qa=\"advanced-search__education-item-label_special_secondary\"]");
-    private static final SelenideElement educationHigher =
+    private final SelenideElement educationHigher =
             $("[data-qa=\"advanced-search__education-item-label_higher\"]");
 
     @Step("Ввод запроса {keyWord} в инпут")

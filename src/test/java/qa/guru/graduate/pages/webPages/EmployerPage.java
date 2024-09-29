@@ -6,14 +6,13 @@ import io.qameta.allure.Step;
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Condition.visible;
 import static com.codeborne.selenide.Selenide.$;
-import static com.codeborne.selenide.Selenide.$$;
 import static qa.guru.graduate.helpers.Constants.*;
 
 public class EmployerPage {
 
-    private static final SelenideElement employerTitle = $("[data-qa=\"employer-index-title\"]");
-    private static final SelenideElement employerSubtitle = $("[data-qa=\"employer-index-subtitle\"]");
-    private static final SelenideElement publishVacancyButton = $("[data-qa=\"employer-index-publish-vacancy\"]");
+    private final SelenideElement employerTitle = $("[data-qa=\"employer-index-title\"]");
+    private final SelenideElement employerSubtitle = $("[data-qa=\"employer-index-subtitle\"]");
+    private final SelenideElement publishVacancyButton = $("[data-qa=\"employer-index-publish-vacancy\"]");
 
     @Step("Проверка отображения заголовка на странице работодателя")
     public EmployerPage checkVisibleEmployerTitle() {

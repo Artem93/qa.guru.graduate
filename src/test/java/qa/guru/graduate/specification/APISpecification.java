@@ -11,6 +11,7 @@ import static io.restassured.http.ContentType.JSON;
 import static qa.guru.graduate.helpers.AllureRestAssuredFilter.withCustomTemplates;
 
 public class APISpecification {
+
     public static RequestSpecification requestSpec = with()
             .filter(withCustomTemplates())
             .contentType(JSON)
@@ -20,34 +21,28 @@ public class APISpecification {
 
     public static ResponseSpecification response200Spec = new ResponseSpecBuilder()
             .expectStatusCode(200)
-            .expectContentType(JSON)
             .log(LogDetail.STATUS)
             .log(LogDetail.BODY)
             .log(LogDetail.HEADERS)
             .build();
 
     public static ResponseSpecification response201Spec = new ResponseSpecBuilder()
+            .expectStatusCode(201)
             .log(BODY)
             .log(HEADERS)
             .log(STATUS)
-            .expectStatusCode(201)
             .build();
 
     public static ResponseSpecification response204Spec = new ResponseSpecBuilder()
+            .expectStatusCode(204)
             .log(BODY)
             .log(HEADERS)
             .log(STATUS)
-            .expectStatusCode(204)
             .build();
 
     public static ResponseSpecification response400Spec = new ResponseSpecBuilder()
-            .log(BODY)
-            .log(HEADERS)
-            .log(STATUS)
             .expectStatusCode(400)
-            .build();
-
-    public static ResponseSpecification responseSpec = new ResponseSpecBuilder()
+            .expectContentType(JSON)
             .log(BODY)
             .log(HEADERS)
             .log(STATUS)

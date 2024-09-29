@@ -9,12 +9,13 @@ import static org.openqa.selenium.By.id;
 import static qa.guru.graduate.helpers.Constants.*;
 
 public class FirstScreen {
-    private static final SelenideElement supportButton = $(id("ru.hh.android:id/view_hh_button_small_thin_title_text_view"));
-    private static final SelenideElement newUserButton = $(id("ru.hh.android:id/fragment_intentions_onboarding_choose_direction_button_new_user"));
-    private static final SelenideElement oldUserButton = $(id("ru.hh.android:id/fragment_intentions_onboarding_choose_direction_button_have_account"));
-    private static final SelenideElement logoImage = $(id("ru.hh.android:id/fragment_intentions_onboarding_choose_direction_image_logo"));
-    private static final SelenideElement titleTextView = $(id("ru.hh.android:id/fragment_intentions_onboarding_choose_direction_text_view_logo"));
-    private static final SelenideElement offerTextView = $(id("ru.hh.android:id/fragment_intentions_onboarding_choose_direction_text_view_offer"));
+
+    private final SelenideElement supportButton = $(id("ru.hh.android:id/view_hh_button_small_thin_title_text_view"));
+    private final SelenideElement newUserButton = $(id("ru.hh.android:id/fragment_intentions_onboarding_choose_direction_button_new_user"));
+    private final SelenideElement oldUserButton = $(id("ru.hh.android:id/fragment_intentions_onboarding_choose_direction_button_have_account"));
+    private final SelenideElement logoImage = $(id("ru.hh.android:id/fragment_intentions_onboarding_choose_direction_image_logo"));
+    private final SelenideElement titleTextView = $(id("ru.hh.android:id/fragment_intentions_onboarding_choose_direction_text_view_logo"));
+    private final SelenideElement offerTextView = $(id("ru.hh.android:id/fragment_intentions_onboarding_choose_direction_text_view_offer"));
 
     @Step("Проверка видимости и кликабелньности кнопки поддержки")
     public FirstScreen checkSupportButtonVisible() {

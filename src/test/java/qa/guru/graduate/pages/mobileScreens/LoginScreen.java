@@ -12,8 +12,8 @@ import static qa.guru.graduate.helpers.Constants.otherMethodsButtonText;
 
 public class LoginScreen {
 
-    private static final SelenideElement otherMethodsButton = $(xpath(String.format("//android.widget.TextView[@text=\"%s\"]", otherMethodsButtonText)));
-    private static final SelenideElement headerTextView = $(xpath(String.format("//android.widget.TextView[@text=\"%s\"]", loginHeaderText)));
+    private final SelenideElement otherMethodsButton = $(xpath(String.format("//android.widget.TextView[@text=\"%s\"]", otherMethodsButtonText)));
+    private final SelenideElement headerTextView = $(xpath(String.format("//android.widget.TextView[@text=\"%s\"]", loginHeaderText)));
 
     private static SelenideElement getAuthButton(String header) {
         return $(xpath(String.format("//android.widget.TextView[@text=\"%s\"]", header)));

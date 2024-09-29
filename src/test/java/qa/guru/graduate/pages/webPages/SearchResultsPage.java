@@ -11,15 +11,16 @@ import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.$$;
 
 public class SearchResultsPage {
-    private static final SelenideElement commonTitle = $("[data-qa=\"title\"]");
-    private static final ElementsCollection titlesVacancy = $$("[data-qa=\"serp-item__title-text\"]");
-    private static final SelenideElement educationNotRequired =
+
+    private final SelenideElement commonTitle = $("[data-qa=\"title\"]");
+    private final ElementsCollection titlesVacancy = $$("[data-qa=\"serp-item__title-text\"]");
+    private final SelenideElement educationNotRequired =
             $("[data-qa=\"checkbox-container\"] [value=\"not_required_or_not_specified\"]");
-    private static final SelenideElement educationSpecial =
+    private final SelenideElement educationSpecial =
             $("[data-qa=\"checkbox-container\"] [value=\"special_secondary\"]");
-    private static final SelenideElement educationHigher =
+    private final SelenideElement educationHigher =
             $("[data-qa=\"checkbox-container\"] [value=\"higher\"]");
-    private static final SelenideElement selectedSalary = $("[name=\"salary\"][checked]");
+    private final SelenideElement selectedSalary = $("[name=\"salary\"][checked]");
 
 
     @Step("Проверка отображения поискового запроса в тайтле {text}")

@@ -15,5 +15,7 @@ public class ConfigsDriver {
     private static final EmulationConfig emulationConfig = ConfigFactory.create(EmulationConfig.class, System.getProperties());
     @Getter
     private static final SystemConfig systemConfig = ConfigFactory.create(SystemConfig.class, System.getProperties());
+    @Getter
+    private static final WebConfig webConfig = ConfigFactory.create(WebConfig.class, System.getProperties());
 
 }

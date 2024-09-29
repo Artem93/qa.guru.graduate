@@ -9,9 +9,9 @@ import static com.codeborne.selenide.Selectors.byTagAndText;
 import static com.codeborne.selenide.Selenide.$;
 
 public class AreaSwitcherPage {
-    private static final SelenideElement areaSwitcherBlock = $("[data-qa=\"area-switcher-welcome\"]");
 
-    private static SelenideElement getCityElement(String city) {
+    private final SelenideElement areaSwitcherBlock = $("[data-qa=\"area-switcher-welcome\"]");
+    private SelenideElement getCityElement(String city) {
         return $(byTagAndText("a", city));
     }
 

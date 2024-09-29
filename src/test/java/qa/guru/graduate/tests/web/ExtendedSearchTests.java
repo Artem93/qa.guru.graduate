@@ -1,5 +1,8 @@
 package qa.guru.graduate.tests.web;
 
+import io.qameta.allure.Epic;
+import io.qameta.allure.Feature;
+import io.qameta.allure.Owner;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Tags;
@@ -15,7 +18,10 @@ import static qa.guru.graduate.enums.SearchByEnum.NAME_VACANCY;
 import static qa.guru.graduate.helpers.Constants.salaryValue;
 import static qa.guru.graduate.helpers.Constants.searchRequest;
 
-public class ExtendedSearchPageTests extends WebTestBase {
+@Epic("Web tests")
+@Feature("Extended Search")
+public class ExtendedSearchTests extends WebTestBase {
+
     private final ExtendedSearchPage extendedSearchPage = new ExtendedSearchPage();
     private final SearchResultsPage searchResultsPage = new SearchResultsPage();
 
@@ -23,6 +29,7 @@ public class ExtendedSearchPageTests extends WebTestBase {
             @Tag("web"),
             @Tag("all")
     })
+    @Owner("Artem Lepkin")
     @Test
     @DisplayName("Проверка результатов расширенного поиска")
     void checkMainHeaderBlock() {
@@ -41,6 +48,7 @@ public class ExtendedSearchPageTests extends WebTestBase {
             @Tag("web"),
             @Tag("all")
     })
+    @Owner("Artem Lepkin")
     @ParameterizedTest(name = "Проверка образования {0}")
     @EnumSource(EducationEnum.class)
     @DisplayName("Проверка применения настроек образования расширенного поиска")
@@ -60,6 +68,7 @@ public class ExtendedSearchPageTests extends WebTestBase {
             @Tag("web"),
             @Tag("all")
     })
+    @Owner("Artem Lepkin")
     @Test
     @DisplayName("Проверка применения настроек зараплаты расширенного поиска")
     void checkApplySalarySettingsExtendedSearch() {

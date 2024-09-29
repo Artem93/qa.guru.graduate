@@ -1,5 +1,8 @@
 package qa.guru.graduate.tests.api;
 
+import io.qameta.allure.Epic;
+import io.qameta.allure.Feature;
+import io.qameta.allure.Owner;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Tags;
@@ -10,13 +13,16 @@ import qa.guru.graduate.pages.apiSteps.EducationalSteps;
 
 import static qa.guru.graduate.helpers.TestData.*;
 
+@Epic("Api tests")
+@Feature("Educational Institutions requests")
 public class EducationalInstitutionsTests extends ApiTestBase {
 
-    @Test
     @Tags({
             @Tag("api"),
             @Tag("all")
     })
+    @Owner("Artem Lepkin")
+    @Test
     @DisplayName("Проверка запроса инфо об учебном заведении с валидным Id")
     void positiveEducationalRequestWithIdTest() {
         var testModel = getTestEducationalModelRu();
@@ -27,12 +33,13 @@ public class EducationalInstitutionsTests extends ApiTestBase {
                 .comparisonFields(testModel, response, "Проверка ответа на валидность");
     }
 
-    @ValueSource(strings = {";", "q", "я", "string"})
-    @ParameterizedTest(name = "Невалидный id '' {0} ''")
     @Tags({
             @Tag("api"),
             @Tag("all")
     })
+    @Owner("Artem Lepkin")
+    @ValueSource(strings = {";", "q", "я", "string"})
+    @ParameterizedTest(name = "Невалидный id '' {0} ''")
     @DisplayName("Проверка запроса инфо об учебном заведении с невалидным Id")
     void checkNegativeEducationalRequestTest(String badId) {
         var testModel = getBadArgumentTestEducationalModel();
@@ -43,11 +50,12 @@ public class EducationalInstitutionsTests extends ApiTestBase {
                 .comparisonFields(testModel.getErrors(), response.getErrors(), "Проверка соответствия ошибок");
     }
 
-    @Test
     @Tags({
             @Tag("api"),
             @Tag("all")
     })
+    @Owner("Artem Lepkin")
+    @Test
     @DisplayName("Проверка запроса инфо об учебном заведении с валидным параметрами Id и locale")
     void positiveEducationalRequestWithIdAndEnLocaleTest() {
         var testModel = getTestEducationalModelEn();
