@@ -10,14 +10,6 @@ import org.aeonbits.owner.Config.Sources;
 public interface EmulationConfig extends Config {
 
     @Key("osVersion")
-    @DefaultValue("UIAutomator2")
-    String getUiAutomator();
-
-    @Key("osVersion")
-    @DefaultValue("Android")
-    String getPlatform();
-
-    @Key("osVersion")
     String getOSVersion();
 
     @Key("device")

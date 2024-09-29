@@ -6,20 +6,15 @@ import io.qameta.allure.Step;
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Condition.visible;
 import static com.codeborne.selenide.Selenide.$;
-import static com.codeborne.selenide.Selenide.$$;
 import static qa.guru.graduate.helpers.Constants.*;
 
 public class EmployerPage {
 
-    private static final SelenideElement employerTitle = $("[data-qa=\"employer-index-title\"]");
-    private static final SelenideElement employerSubtitle = $("[data-qa=\"employer-index-subtitle\"]");
-    private static final SelenideElement publishVacancyButton = $("[data-qa=\"employer-index-publish-vacancy\"]");
+    private final SelenideElement employerTitle = $("[data-qa=\"employer-index-title\"]");
+    private final SelenideElement employerSubtitle = $("[data-qa=\"employer-index-subtitle\"]");
+    private final SelenideElement publishVacancyButton = $("[data-qa=\"employer-index-publish-vacancy\"]");
 
-    private static SelenideElement getSpecialisationCheckbox(String specialisation) {
-        return $$("[data-qa=\"checkbox-container\"]").findBy(text(specialisation));
-    }
-
-    @Step
+    @Step("Проверка отображения заголовка на странице работодателя")
     public EmployerPage checkVisibleEmployerTitle() {
         employerTitle
                 .shouldHave(text(employerTitleText))
@@ -27,7 +22,7 @@ public class EmployerPage {
         return this;
     }
 
-    @Step
+    @Step("Проверка отображения подзаголовка на странице работодателя")
     public EmployerPage checkVisibleEmployerSubtitle() {
         employerSubtitle
                 .shouldHave(text(employerSubtitleText))
@@ -35,17 +30,11 @@ public class EmployerPage {
         return this;
     }
 
-    @Step
+    @Step("Проверка отображения кнопки публикации вакансии")
     public EmployerPage checkVisiblePublishVacancyButton() {
         publishVacancyButton
                 .shouldHave(text(publishVacancyButtonText))
                 .shouldBe(visible);
-        return this;
-    }
-
-    @Step
-    public EmployerPage clickSpecialisationCheckbox(String specialisation) {
-        getSpecialisationCheckbox(specialisation).click();
         return this;
     }
 }

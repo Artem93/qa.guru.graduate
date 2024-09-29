@@ -63,7 +63,7 @@ public class TestData {
         ResumeModel resume = new ResumeModel();
         // Заполнение поля area
         ResumeModel.Area area = new ResumeModel.Area();
-        area.setId(faker.number().numberBetween(1, 50));
+        area.setId(faker.number().numberBetween(1, 70));
         resume.setArea(area);
 
         // Заполнение поля contact

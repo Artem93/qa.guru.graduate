@@ -10,7 +10,8 @@ public final class Constants {
     public static final String employerTitleText = "Разместите\n" +
             "вакансию на hh.ru";
     public static final String publishVacancyButtonText = "Разместить вакансию";
-    public static final String searchRequest = "QA";
+    public static final String searchRequestQa = "QA";
+    public static final String[] vacancyTagsQA = {"QA", "Quality Assurance"};
     public static final String salaryValue = "1000000";
 
     public static final String supportButtonText = "Поддержка";

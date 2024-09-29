@@ -4,6 +4,9 @@ plugins {
     id 'io.freefair.lombok' version "8.6"
 }
 
+compileJava.options.encoding = "UTF-8"
+compileTestJava.options.encoding = "UTF-8"
+
 group = 'guru.qa'
 version = '1.0-SNAPSHOT'
 
@@ -12,8 +15,8 @@ repositories {
 }
 
 def aspectjWeaverVersion = "1.9.22",
-    selenideVersion = "7.3.3",
-    appiumVersion = "9.2.1",
+    selenideVersion = "7.4.1",
+    appiumVersion = "9.3.0",
     restAssuredVersion = "5.3.0",
     allureVersion = "2.21.0",
     junitVersion = "5.9.3",

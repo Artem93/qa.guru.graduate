@@ -3,6 +3,7 @@ package qa.guru.graduate.helpers;
 import io.qameta.allure.restassured.AllureRestAssured;
 
 public class AllureRestAssuredFilter {
+
     private static final AllureRestAssured FILTER = new AllureRestAssured();
 
     public static AllureRestAssured withCustomTemplates() {

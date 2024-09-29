@@ -2,6 +2,7 @@ package qa.guru.graduate.pages.webPages;
 
 import com.codeborne.selenide.ElementsCollection;
 import com.codeborne.selenide.SelenideElement;
+import io.qameta.allure.Step;
 import org.junit.jupiter.api.Assertions;
 import qa.guru.graduate.enums.EducationEnum;
 
@@ -10,17 +11,19 @@ import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.$$;
 
 public class SearchResultsPage {
-    private static final SelenideElement commonTitle = $("[data-qa=\"title\"]");
-    private static final ElementsCollection titlesVacancy = $$("[data-qa=\"serp-item__title-text\"]");
-    private static final SelenideElement educationNotRequired =
+
+    private final SelenideElement commonTitle = $("[data-qa=\"title\"]");
+    private final ElementsCollection titlesVacancy = $$("[data-qa=\"serp-item__title-text\"]");
+    private final SelenideElement educationNotRequired =
             $("[data-qa=\"checkbox-container\"] [value=\"not_required_or_not_specified\"]");
-    private static final SelenideElement educationSpecial =
+    private final SelenideElement educationSpecial =
             $("[data-qa=\"checkbox-container\"] [value=\"special_secondary\"]");
-    private static final SelenideElement educationHigher =
+    private final SelenideElement educationHigher =
             $("[data-qa=\"checkbox-container\"] [value=\"higher\"]");
-    private static final SelenideElement selectedSalary = $("[name=\"salary\"][checked]");
+    private final SelenideElement selectedSalary = $("[name=\"salary\"][checked]");
 
 
+    @Step("Проверка отображения поискового запроса в тайтле {text}")
     public SearchResultsPage checkCommonTitleContainText(String text) {
         commonTitle
                 .shouldBe(visible)
@@ -28,18 +31,21 @@ public class SearchResultsPage {
         return this;
     }
 
-    public SearchResultsPage checkAllVacancyTitlesContainText(String text) {
+    @Step("Проверка, что в названиях всех вакансий есть поисковой запрос {text}")
+    public SearchResultsPage checkAllVacancyTitlesContainText(String[] text) {
         for (SelenideElement element : titlesVacancy) {
-            element.shouldHave(text(text));
+            element.shouldHave(oneOfTexts(text));
         }
         return this;
     }
 
+    @Step("Проверка, что в названии первой вакансии есть поисковой запрос {text}")
     public SearchResultsPage checkFirstVacancyTitleContainText(String text) {
         titlesVacancy.first().shouldHave(text(text));
         return this;
     }
 
+    @Step("Проверка, что выделен выбранный в расширенном поиске тип учёности {education}")
     public SearchResultsPage checkCheckedEducationCheckbox(EducationEnum education) {
         educationHigher.scrollIntoView(false);
         switch (education) {
@@ -50,6 +56,7 @@ public class SearchResultsPage {
         return this;
     }
 
+    @Step("Проверка, что выбрана указанная в расширенном поиске зарплата {salary}")
     public SearchResultsPage checkValueSelectedSalary(String salary) {
         Assertions.assertEquals(salary, selectedSalary.getValue());
         return this;

@@ -10,7 +10,6 @@ import javax.annotation.Nonnull;
 
 import static io.appium.java_client.remote.AutomationName.ANDROID_UIAUTOMATOR2;
 import static io.appium.java_client.remote.MobilePlatform.ANDROID;
-import static qa.guru.graduate.drivers.ConfigsDriver.getRealConfig;
 import static qa.guru.graduate.helpers.MobileAppUtils.getAppPath;
 import static qa.guru.graduate.helpers.MobileAppUtils.getAppiumServerUrl;
 
@@ -23,11 +22,11 @@ public class RealDriver implements WebDriverProvider {
         options
                 .setAutomationName(ANDROID_UIAUTOMATOR2)
                 .setPlatformName(ANDROID)
-                .setPlatformVersion(getRealConfig().getOSVersion())
-                .setDeviceName(getRealConfig().getDevice())
+                .setPlatformVersion(ConfigsDriver.getRealConfig().getOSVersion())
+                .setDeviceName(ConfigsDriver.getRealConfig().getDevice())
                 .setApp(getAppPath())
-                .setAppPackage(getRealConfig().getAppPackage())
-                .setAppActivity(getRealConfig().getAppActivity());
+                .setAppPackage(ConfigsDriver.getRealConfig().getAppPackage())
+                .setAppActivity(ConfigsDriver.getRealConfig().getAppActivity());
 
         return new AndroidDriver(getAppiumServerUrl(), options);
     }

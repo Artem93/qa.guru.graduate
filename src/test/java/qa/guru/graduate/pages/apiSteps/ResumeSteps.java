@@ -16,7 +16,7 @@ public class ResumeSteps {
         return given(requestSpec)
                 .header("Authorization", bearer)
                 .header("content-type", "application/json")
-                .header("HH-User-Agent", "QaGuruDiploma/1.0 (artegor93@mail.com)")
+                .header("HH-User-Agent", "QaGuruDiploma/1.0 (test@mail.com)")
                 .when()
                 .get("resumes/mine")
                 .then()
@@ -24,26 +24,27 @@ public class ResumeSteps {
                 .extract().body().as(ListOfResumesModel.class);
     }
 
-    @Step("Создание резюме")
+    @Step("Создание резюме с названием: {expectedResume.title}")
     public ResumeSteps createResume(ResumeModel expectedResume) {
         given(requestSpec)
                 .body(expectedResume)
                 .header("Authorization", bearer)
                 .header("content-type", "application/json")
-                .header("HH-User-Agent", "QaGuruDiploma/1.0 (artegor93@mail.com)")
+                .header("HH-User-Agent", "QaGuruDiploma/1.0 (test@mail.com)")
                 .when()
                 .post("resumes")
                 .then()
-                .spec(response201Spec);
+                .spec(response201Spec)
+                .extract().body().asString();
         return this;
     }
 
-    @Step("Удаление резюме {id}")
+    @Step("Удаление резюме с номером: {id}")
     public ResumeSteps deleteResume(String id) {
         given(requestSpec)
                 .header("Authorization", bearer)
                 .header("content-type", "application/json")
-                .header("HH-User-Agent", "QaGuruDiploma/1.0 (artegor93@mail.com)")
+                .header("HH-User-Agent", "QaGuruDiploma/1.0 (test@mail.com)")
                 .when()
                 .delete("resumes/" + id)
                 .then()

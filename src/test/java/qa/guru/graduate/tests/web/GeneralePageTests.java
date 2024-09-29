@@ -1,5 +1,9 @@
 package qa.guru.graduate.tests.web;
 
+import io.qameta.allure.AllureId;
+import io.qameta.allure.Epic;
+import io.qameta.allure.Feature;
+import io.qameta.allure.Owner;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Tags;
@@ -9,7 +13,11 @@ import org.junit.jupiter.params.provider.ValueSource;
 import qa.guru.graduate.pages.webPages.*;
 
 import static com.codeborne.selenide.Selenide.open;
+import static qa.guru.graduate.helpers.Constants.searchRequestQa;
 
+@Epic("Web tests")
+@Feature("General page elements")
+@DisplayName("General page elements tests")
 public class GeneralePageTests extends WebTestBase {
 
     private final GeneralPage generalPage = new GeneralPage();
@@ -22,8 +30,10 @@ public class GeneralePageTests extends WebTestBase {
             @Tag("web"),
             @Tag("all")
     })
+    @Owner("Artem Lepkin")
     @Test
     @DisplayName("Проверка кнопок в хедере страницы")
+    @AllureId("34664")
     void checkMainHeaderBlock() {
         open("");
         generalPage
@@ -38,9 +48,11 @@ public class GeneralePageTests extends WebTestBase {
             @Tag("web"),
             @Tag("all")
     })
+    @Owner("Artem Lepkin")
     @ParameterizedTest(name = "Смена города на {0}")
     @ValueSource(strings = {"Воронеж", "Гомель"})
-    @DisplayName("Проверка смены города")
+    @DisplayName("Проверка смены города.")
+    @AllureId("34666")
     void checkChangeCity(String city) {
         open("");
         generalPage
@@ -57,8 +69,10 @@ public class GeneralePageTests extends WebTestBase {
             @Tag("web"),
             @Tag("all")
     })
+    @Owner("Artem Lepkin")
     @Test
     @DisplayName("Переход на страницу для работодателей")
+    @AllureId("34667")
     void checkMoveToEmployerPageByHeaderLink() {
         open("");
         generalPage
@@ -73,15 +87,17 @@ public class GeneralePageTests extends WebTestBase {
             @Tag("web"),
             @Tag("all")
     })
+    @Owner("Artem Lepkin")
     @Test
     @DisplayName("Проверка выполнения поискового запроса")
+    @AllureId("34665")
     void checkSearchResults() {
         open("");
         generalPage
-                .setSearchRequest("QA");
+                .setSearchRequest(searchRequestQa);
         modalLoginPage
                 .closeModalPage();
         searchResultsPage
-                .checkCommonTitleContainText("QA");
+                .checkCommonTitleContainText(searchRequestQa);
     }
 }

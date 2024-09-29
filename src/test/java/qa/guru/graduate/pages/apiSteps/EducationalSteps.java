@@ -9,7 +9,7 @@ import static io.restassured.RestAssured.given;
 import static qa.guru.graduate.specification.APISpecification.*;
 
 public class EducationalSteps {
-    @Step("Поиск образовательного учереждения по валидному id = {idModel}")
+    @Step("Поиск образовательного учереждения по валидному id: {idModel}")
     public ValidEducationalModel getEducationalItemById(String idModel) {
         return given(requestSpec)
                 .when()
@@ -19,7 +19,7 @@ public class EducationalSteps {
                 .extract().as(ValidEducationalModel.class);
     }
 
-    @Step("Поиск образовательного учереждения по валидному id = {idModel} и локали = {locale}")
+    @Step("Поиск образовательного учереждения по валидному id: {idModel} и локали = {locale}")
     public ValidEducationalModel getEducationalItemByIdAndLocale(String idModel, String locale) {
         return given(requestSpec)
                 .when()
@@ -29,7 +29,7 @@ public class EducationalSteps {
                 .extract().as(ValidEducationalModel.class);
     }
 
-    @Step("Поиск образовательного учереждения по невалидному id = {idModel}")
+    @Step("Поиск образовательного учереждения по невалидному id: {idModel}")
     public BadArgumentEducationalModel requestEducationalWithBadId(String idModel) {
         return given(requestSpec)
                 .when()

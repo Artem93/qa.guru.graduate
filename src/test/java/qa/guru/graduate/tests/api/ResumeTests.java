@@ -1,5 +1,9 @@
 package qa.guru.graduate.tests.api;
 
+import io.qameta.allure.AllureId;
+import io.qameta.allure.Epic;
+import io.qameta.allure.Feature;
+import io.qameta.allure.Owner;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Tags;
@@ -9,14 +13,19 @@ import qa.guru.graduate.pages.apiSteps.ResumeSteps;
 import static qa.guru.graduate.helpers.TestData.createResumeModel;
 import static qa.guru.graduate.helpers.TestData.generateResumeTitle;
 
+@Epic("Api tests")
+@Feature("Create and remove resumes")
+@DisplayName("Create and remove resume tests")
 public class ResumeTests extends ApiTestBase {
 
-    @Test
     @Tags({
             @Tag("api"),
             @Tag("all")
     })
-    @DisplayName("Проверка созданния реззюме")
+    @Owner("Artem Lepkin")
+    @Test
+    @DisplayName("Проверка созданния резюме")
+    @AllureId("34657")
     void createResumeTest() {
         var expectedResume = createResumeModel(generateResumeTitle());
         var resumeSteps = new ResumeSteps();
@@ -33,31 +42,33 @@ public class ResumeTests extends ApiTestBase {
                 .comparisonFields(
                         expectedResume.getTitle(),
                         createdModel.getTitle(),
-                        "Проверка, соответсвия названий ожидаемого и созданного резюме")
+                        "Проверка соответсвия названий ожидаемого и созданного резюме")
                 .comparisonFields(
                         countResumesBefore.getFound() + 1,
                         allResumes.getFound(),
-                        "Проверка, что текущее количество резюме больше на одно, чем до создания нового")
+                        "Проверка, что после создания резюме их количество увеличелост на одно")
                 .comparisonFields(
                         expectedResume.getArea(),
                         createdModel.getArea(),
-                        "Проверка, соответсвия локаций ожидаемого и созданного резюме")
+                        "Проверка соответсвия локаций ожидаемого и созданного резюме")
                 .comparisonFields(
                         expectedResume.getContact(),
                         createdModel.getContact(),
-                        "Проверка, соответсвия контактов ожидаемого и созданного резюме")
+                        "Проверка соответсвия контактов ожидаемого и созданного резюме")
                 .comparisonFields(
                         expectedResume.getEducation(),
                         createdModel.getEducation(),
-                        "Проверка, соответсвия образования ожидаемого и созданного резюме");
+                        "Проверка соответсвия образования ожидаемого и созданного резюме");
     }
 
-    @Test
     @Tags({
             @Tag("api"),
             @Tag("all")
     })
-    @DisplayName("Проверка удаления созданного реззюме")
+    @Owner("Artem Lepkin")
+    @Test
+    @DisplayName("Проверка удаления созданного резюме")
+    @AllureId("34655")
     void deleteResumeTest() {
         var expectedResume = createResumeModel(generateResumeTitle());
         var resumeSteps = new ResumeSteps();

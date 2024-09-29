@@ -4,7 +4,7 @@ import org.aeonbits.owner.Config;
 import org.aeonbits.owner.Config.Sources;
 
 @Sources({
-        "classpath:properties/browserStuckAuth.properties"
+        "classpath:properties/browserstack_auth.properties"
 })
 public interface AuthConfig extends Config {
 

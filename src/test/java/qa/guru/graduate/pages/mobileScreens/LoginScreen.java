@@ -12,8 +12,8 @@ import static qa.guru.graduate.helpers.Constants.otherMethodsButtonText;
 
 public class LoginScreen {
 
-    private static final SelenideElement otherMethodsButton = $(xpath(String.format("//android.widget.TextView[@text=\"%s\"]", otherMethodsButtonText)));
-    private static final SelenideElement headerTextView = $(xpath(String.format("//android.widget.TextView[@text=\"%s\"]", loginHeaderText)));
+    private final SelenideElement otherMethodsButton = $(xpath(String.format("//android.widget.TextView[@text=\"%s\"]", otherMethodsButtonText)));
+    private final SelenideElement headerTextView = $(xpath(String.format("//android.widget.TextView[@text=\"%s\"]", loginHeaderText)));
 
     private static SelenideElement getAuthButton(String header) {
         return $(xpath(String.format("//android.widget.TextView[@text=\"%s\"]", header)));
@@ -26,7 +26,7 @@ public class LoginScreen {
         return this;
     }
 
-    @Step("Проверка кнопки {button}")
+    @Step("Проверка видимости и кликабельности кнопки {button}")
     public LoginScreen checkAuthButton(String button) {
         getAuthButton(button)
                 .shouldBe(visible)
@@ -34,7 +34,7 @@ public class LoginScreen {
         return this;
     }
 
-    @Step("Кликк по кнпоке 'Другие способы'")
+    @Step("Кликк по кнопке 'Другие способы'")
     public LoginScreen clickOtherMethodsButton() {
         otherMethodsButton
                 .click();
