@@ -16,6 +16,7 @@ import static qa.guru.graduate.helpers.Constants.searchRequest;
 
 @Epic("Web tests")
 @Feature("General page elements")
+@DisplayName("General page elements tests")
 public class GeneralePageTests extends WebTestBase {
 
     private final GeneralPage generalPage = new GeneralPage();

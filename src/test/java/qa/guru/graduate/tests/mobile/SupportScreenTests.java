@@ -12,6 +12,7 @@ import qa.guru.graduate.pages.mobileScreens.SupportScreen;
 
 @Epic("Mobile tests")
 @Feature("Support screen")
+@DisplayName("Support screen tests")
 public class SupportScreenTests extends MobileTestBase {
 
     private static final SupportScreen supportScreen = new SupportScreen();

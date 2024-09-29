@@ -13,6 +13,7 @@ import qa.guru.graduate.pages.mobileScreens.LoginScreen;
 
 @Epic("Mobile tests")
 @Feature("Login screen")
+@DisplayName("Login screen tests")
 public class LoginScreenTests extends MobileTestBase {
 
     private static final LoginScreen loginScreen = new LoginScreen();

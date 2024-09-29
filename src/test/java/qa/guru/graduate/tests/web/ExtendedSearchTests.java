@@ -20,6 +20,7 @@ import static qa.guru.graduate.helpers.Constants.searchRequest;
 
 @Epic("Web tests")
 @Feature("Extended Search")
+@DisplayName("Extended Search tests")
 public class ExtendedSearchTests extends WebTestBase {
 
     private final ExtendedSearchPage extendedSearchPage = new ExtendedSearchPage();

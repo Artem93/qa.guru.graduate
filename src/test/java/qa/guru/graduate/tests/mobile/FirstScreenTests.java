@@ -11,6 +11,7 @@ import qa.guru.graduate.pages.mobileScreens.FirstScreen;
 
 @Epic("Mobile tests")
 @Feature("Start screen")
+@DisplayName("Start screen tests")
 public class FirstScreenTests extends MobileTestBase {
 
     private static final FirstScreen firstScreen = new FirstScreen();

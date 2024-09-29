@@ -18,8 +18,8 @@ public class BrowserstackDriver implements WebDriverProvider {
     public WebDriver createDriver(@Nonnull Capabilities capabilities) {
         DesiredCapabilities caps = new DesiredCapabilities();
         var bstackOptions = new HashMap<String, Object>();
-        bstackOptions.put("userName", "artem_uCYEbU");
-        bstackOptions.put("accessKey", "Twtq9MvhHLgp4GTh5rfk");
+        bstackOptions.put("userName", ConfigsDriver.getAuthConfig().getLogin());
+        bstackOptions.put("accessKey", ConfigsDriver.getAuthConfig().getPassword());
         bstackOptions.put("projectName", ConfigsDriver.getBrowserstackConfig().getProject());
         bstackOptions.put("buildName", ConfigsDriver.getBrowserstackConfig().getBuild());
         caps.setCapability("appium:platformVersion", ConfigsDriver.getBrowserstackConfig().getOSVersion());

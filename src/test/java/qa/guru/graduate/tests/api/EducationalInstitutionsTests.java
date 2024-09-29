@@ -15,6 +15,7 @@ import static qa.guru.graduate.helpers.TestData.*;
 
 @Epic("Api tests")
 @Feature("Educational Institutions requests")
+@DisplayName("Educational Institutions request tests")
 public class EducationalInstitutionsTests extends ApiTestBase {
 
     @Tags({

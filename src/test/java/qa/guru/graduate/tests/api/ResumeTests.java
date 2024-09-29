@@ -14,6 +14,7 @@ import static qa.guru.graduate.helpers.TestData.generateResumeTitle;
 
 @Epic("Api tests")
 @Feature("Create and remove resumes")
+@DisplayName("Create and remove resume tests")
 public class ResumeTests extends ApiTestBase {
 
     @Tags({
