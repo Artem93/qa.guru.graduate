@@ -49,6 +49,7 @@ Headhunter - сервис, который помогает найти работ
 <a href="https://qameta.io/"><img alt="Allure TestOps" height="50" src="src/test/resources/images/Allure_TO.svg" width="50"/></a>
 <a href="https://telegram.org/"><img alt="Telegram" height="50" src="src/test/resources/images/Telegram.png" width="50"/></a>
 <a href="https://telegram.org/"><img alt="Telegram" height="50" src="src/test/resources/images/lombok.png" width="50"/></a>
+   <a href="https://telegram.org/"><img alt="Telegram" height="50" src="src/test/resources/images/jira.png" width="50"/></a>
 </div>
 
 ## Запуск тестов
@@ -134,6 +135,12 @@ gradle allureServe
 
    <img src="src/test/resources/images/allure_run_example.png">
    <img src="src/test/resources/images/allure_run_example_2.png">
+
+### Интеграция с <b><a target="_blank" href="https://jira.autotests.cloud/browse/">Jira</a></b>
+
+#### Пример задачи в jira:
+
+   <img src="src/test/resources/images/jira_example.png">
 
 ### Интеграция с <b><a target="_blank" href="https://allure.autotests.cloud/project/4450/dashboards">Allure TestOps</a></b>
 #### Пример прохождения автотестов:
