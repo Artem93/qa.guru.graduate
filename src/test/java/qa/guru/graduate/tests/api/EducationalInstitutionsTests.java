@@ -1,5 +1,6 @@
 package qa.guru.graduate.tests.api;
 
+import io.qameta.allure.AllureId;
 import io.qameta.allure.Epic;
 import io.qameta.allure.Feature;
 import io.qameta.allure.Owner;
@@ -25,6 +26,7 @@ public class EducationalInstitutionsTests extends ApiTestBase {
     @Owner("Artem Lepkin")
     @Test
     @DisplayName("Проверка запроса инфо об учебном заведении с валидным Id")
+    @AllureId("34656")
     void positiveEducationalRequestWithIdTest() {
         var testModel = getTestEducationalModelRu();
         var educationalSteps = new EducationalSteps();
@@ -42,13 +44,14 @@ public class EducationalInstitutionsTests extends ApiTestBase {
     @ValueSource(strings = {";", "q", "я", "string"})
     @ParameterizedTest(name = "Невалидный id '' {0} ''")
     @DisplayName("Проверка запроса инфо об учебном заведении с невалидным Id")
+    @AllureId("34653")
     void checkNegativeEducationalRequestTest(String badId) {
         var testModel = getBadArgumentTestEducationalModel();
         var educationalSteps = new EducationalSteps();
         var response = educationalSteps
                 .requestEducationalWithBadId(badId);
         educationalSteps
-                .comparisonFields(testModel.getErrors(), response.getErrors(), "Проверка соответствия ошибок");
+                .comparisonFields(testModel.getErrors(), response.getErrors(), "Проверка корректности вернувшейся ошибки");
     }
 
     @Tags({
@@ -58,6 +61,7 @@ public class EducationalInstitutionsTests extends ApiTestBase {
     @Owner("Artem Lepkin")
     @Test
     @DisplayName("Проверка запроса инфо об учебном заведении с валидным параметрами Id и locale")
+    @AllureId("34654")
     void positiveEducationalRequestWithIdAndEnLocaleTest() {
         var testModel = getTestEducationalModelEn();
         var educationalSteps = new EducationalSteps();
@@ -65,6 +69,6 @@ public class EducationalInstitutionsTests extends ApiTestBase {
         var response = educationalSteps
                 .getEducationalItemByIdAndLocale(testModel.getItems().get(0).getId(), "EN");
         educationalSteps
-                .comparisonFields(testModel, response, "Проверка соответствия моделей");
+                .comparisonFields(testModel, response, "Проверка ответа на валидность");
     }
 }

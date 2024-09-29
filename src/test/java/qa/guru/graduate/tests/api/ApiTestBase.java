@@ -2,6 +2,9 @@ package qa.guru.graduate.tests.api;
 
 import io.restassured.RestAssured;
 import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.DisplayName;
+
+import static io.qameta.allure.Allure.step;
 
 public class ApiTestBase {
 

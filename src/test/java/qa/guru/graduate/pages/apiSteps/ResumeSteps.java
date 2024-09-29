@@ -24,9 +24,9 @@ public class ResumeSteps {
                 .extract().body().as(ListOfResumesModel.class);
     }
 
-    @Step("Создание резюме")
+    @Step("Создание резюме с названием: {expectedResume.title}")
     public ResumeSteps createResume(ResumeModel expectedResume) {
-        var a = given(requestSpec)
+        given(requestSpec)
                 .body(expectedResume)
                 .header("Authorization", bearer)
                 .header("content-type", "application/json")
@@ -39,7 +39,7 @@ public class ResumeSteps {
         return this;
     }
 
-    @Step("Удаление резюме {id}")
+    @Step("Удаление резюме с номером: {id}")
     public ResumeSteps deleteResume(String id) {
         given(requestSpec)
                 .header("Authorization", bearer)
