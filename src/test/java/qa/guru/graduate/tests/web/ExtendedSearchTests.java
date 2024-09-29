@@ -1,5 +1,6 @@
 package qa.guru.graduate.tests.web;
 
+import io.qameta.allure.AllureId;
 import io.qameta.allure.Epic;
 import io.qameta.allure.Feature;
 import io.qameta.allure.Owner;
@@ -32,6 +33,7 @@ public class ExtendedSearchTests extends WebTestBase {
     @Owner("Artem Lepkin")
     @Test
     @DisplayName("Проверка результатов расширенного поиска")
+    @AllureId("34658")
     void checkMainHeaderBlock() {
         open("/search/vacancy/advanced");
         extendedSearchPage
@@ -52,6 +54,7 @@ public class ExtendedSearchTests extends WebTestBase {
     @ParameterizedTest(name = "Проверка образования {0}")
     @EnumSource(EducationEnum.class)
     @DisplayName("Проверка применения настроек образования расширенного поиска")
+    @AllureId("34687")
     void checkApplyEducationSettingsExtendedSearch(EducationEnum education) {
         open("/search/vacancy/advanced");
         extendedSearchPage
@@ -71,6 +74,7 @@ public class ExtendedSearchTests extends WebTestBase {
     @Owner("Artem Lepkin")
     @Test
     @DisplayName("Проверка применения настроек зараплаты расширенного поиска")
+    @AllureId("34660")
     void checkApplySalarySettingsExtendedSearch() {
         open("/search/vacancy/advanced");
         extendedSearchPage

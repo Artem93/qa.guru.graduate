@@ -1,5 +1,6 @@
 package qa.guru.graduate.tests.mobile;
 
+import io.qameta.allure.AllureId;
 import io.qameta.allure.Epic;
 import io.qameta.allure.Feature;
 import io.qameta.allure.Owner;
@@ -23,6 +24,7 @@ public class FirstScreenTests extends MobileTestBase {
     @Owner("Artem Lepkin")
     @Test
     @DisplayName("Проверка отображения элементов на первой странице")
+    @AllureId("34661")
     void checkFirstScreenElements() {
         firstScreen
                 .checkLogoImageVisible()

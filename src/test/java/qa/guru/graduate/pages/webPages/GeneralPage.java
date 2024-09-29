@@ -52,21 +52,23 @@ public class GeneralPage {
     @Step("Проверка отображения элемента работодателя в хедере")
     public GeneralPage checkEmployerElement() {
         mainMenuEmployerHyperText
+                .shouldBe(visible)
                 .shouldHave(text(mainMenuEmployerText));
         return this;
     }
 
 
-    @Step("Клие по кнпоке работодателя в хедере")
+    @Step("Клик по кнопке работодателя в хедере")
     public GeneralPage clickEmployerElement() {
         mainMenuEmployerHyperText
                 .click();
         return this;
     }
 
-    @Step("Клик по кнпоке экспертного резюме")
+    @Step("Проверка отображения по кнопке экспертного резюме")
     public GeneralPage checkExpertResumeElement() {
         mainMenuExpertResumeHyperText
+                .shouldBe(visible)
                 .shouldHave(text(mainMenuExpertResumeText));
         return this;
     }
@@ -74,6 +76,7 @@ public class GeneralPage {
     @Step("Проверка отображения кнопки ведущей ко всем сервисам")
     public GeneralPage checkApplicantServicesElement() {
         mainMenuApplicantServicesHyperText
+                .shouldBe(visible)
                 .shouldHave(text(mainMenuApplicantServicesText));
         return this;
     }

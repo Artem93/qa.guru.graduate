@@ -1,5 +1,6 @@
 package qa.guru.graduate.tests.mobile;
 
+import io.qameta.allure.AllureId;
 import io.qameta.allure.Epic;
 import io.qameta.allure.Feature;
 import io.qameta.allure.Owner;
@@ -26,6 +27,7 @@ public class LoginScreenTests extends MobileTestBase {
     @Owner("Artem Lepkin")
     @Test
     @DisplayName("Проверка отображения списка методов логина")
+    @AllureId("34662")
     void checkListLoginMethods() {
         firstScreen
                 .clickNewUserButton();

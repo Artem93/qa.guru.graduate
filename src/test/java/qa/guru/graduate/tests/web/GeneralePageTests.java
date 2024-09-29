@@ -1,5 +1,6 @@
 package qa.guru.graduate.tests.web;
 
+import io.qameta.allure.AllureId;
 import io.qameta.allure.Epic;
 import io.qameta.allure.Feature;
 import io.qameta.allure.Owner;
@@ -32,6 +33,7 @@ public class GeneralePageTests extends WebTestBase {
     @Owner("Artem Lepkin")
     @Test
     @DisplayName("Проверка кнопок в хедере страницы")
+    @AllureId("34664")
     void checkMainHeaderBlock() {
         open("");
         generalPage
@@ -49,7 +51,8 @@ public class GeneralePageTests extends WebTestBase {
     @Owner("Artem Lepkin")
     @ParameterizedTest(name = "Смена города на {0}")
     @ValueSource(strings = {"Воронеж", "Гомель"})
-    @DisplayName("Проверка смены города")
+    @DisplayName("Проверка смены города.")
+    @AllureId("34666")
     void checkChangeCity(String city) {
         open("");
         generalPage
@@ -69,6 +72,7 @@ public class GeneralePageTests extends WebTestBase {
     @Owner("Artem Lepkin")
     @Test
     @DisplayName("Переход на страницу для работодателей")
+    @AllureId("34667")
     void checkMoveToEmployerPageByHeaderLink() {
         open("");
         generalPage
@@ -86,6 +90,7 @@ public class GeneralePageTests extends WebTestBase {
     @Owner("Artem Lepkin")
     @Test
     @DisplayName("Проверка выполнения поискового запроса")
+    @AllureId("34665")
     void checkSearchResults() {
         open("");
         generalPage

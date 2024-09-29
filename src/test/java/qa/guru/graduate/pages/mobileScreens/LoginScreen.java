@@ -26,7 +26,7 @@ public class LoginScreen {
         return this;
     }
 
-    @Step("Проверка видимости и кликабелньности кнопки {button}")
+    @Step("Проверка видимости и кликабельности кнопки {button}")
     public LoginScreen checkAuthButton(String button) {
         getAuthButton(button)
                 .shouldBe(visible)
@@ -34,7 +34,7 @@ public class LoginScreen {
         return this;
     }
 
-    @Step("Кликк по кнпоке 'Другие способы'")
+    @Step("Кликк по кнопке 'Другие способы'")
     public LoginScreen clickOtherMethodsButton() {
         otherMethodsButton
                 .click();

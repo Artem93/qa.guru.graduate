@@ -17,7 +17,7 @@ public class FirstScreen {
     private final SelenideElement titleTextView = $(id("ru.hh.android:id/fragment_intentions_onboarding_choose_direction_text_view_logo"));
     private final SelenideElement offerTextView = $(id("ru.hh.android:id/fragment_intentions_onboarding_choose_direction_text_view_offer"));
 
-    @Step("Проверка видимости и кликабелньности кнопки поддержки")
+    @Step("Проверка видимости и кликабельности кнопки поддержки")
     public FirstScreen checkSupportButtonVisible() {
         supportButton
                 .shouldHave(text(supportButtonText))
@@ -26,7 +26,7 @@ public class FirstScreen {
         return this;
     }
 
-    @Step("Проверка видимости и кликабелньности кнопки для новых пользователей")
+    @Step("Проверка видимости и кликабельности кнопки для новых пользователей")
     public FirstScreen checkNewUserButtonVisible() {
         newUserButton
                 .shouldHave(text(newUserButtonText))
@@ -35,7 +35,7 @@ public class FirstScreen {
         return this;
     }
 
-    @Step("Проверка видимости и кликабелньности кнопки для старых пользователей")
+    @Step("Проверка видимости и кликабельности кнопки для старых пользователей")
     public FirstScreen checkOldUserButtonVisible() {
         oldUserButton
                 .shouldHave(text(oldUserButtonText))

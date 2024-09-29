@@ -34,7 +34,7 @@ public class SupportScreen {
         return this;
     }
 
-    @Step("Проверка видимости и кликабелньности кнопки 'Ещё'")
+    @Step("Проверка видимости и кликабельности кнопки 'Ещё'")
     public SupportScreen checkMoreButtonVisible() {
         moreButton
                 .shouldBe(visible)
@@ -50,7 +50,7 @@ public class SupportScreen {
         return this;
     }
 
-    @Step("Проверка видимости и кликабелньности кнопки прикрепления файла")
+    @Step("Проверка видимости и кликабельности кнопки прикрепления файла")
     public SupportScreen checkAttachFileButtonVisible() {
         attachFileButton
                 .shouldBe(visible)
