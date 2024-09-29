@@ -21,20 +21,20 @@
 ## Использованные Технологии и инструменты
 
 <div align="center">
-<a href="https://www.jetbrains.com/idea/"><img alt="InteliJ IDEA" height="50" src="src/test/resources/icons/Idea.svg" width="50"/></a>
-<a href="https://www.java.com/"><img alt="Java" height="50" src="src/test/resources/icons/Java.svg" width="50"/></a>
-<a href="https://gradle.org/"><img alt="Gradle" height="50" src="src/test/resources/icons/Gradle.svg" width="50"/></a>  
-<a href="https://junit.org/junit5/"><img alt="JUnit 5" height="50" src="src/test/resources/icons/Junit5.svg" width="50"/></a>
-<a href="https://selenide.org/"><img alt="Selenide" height="50" src="src/test/resources/icons/Selenide.svg" width="50"/></a>
-<a href="https://aerokube.com/selenoid/"><img alt="Selenoid" height="50" src="src/test/resources/icons/Selenoid.svg" width="50"/></a>
-<a href="https://rest-assured.io/"><img alt="RestAssured" height="50" src="src/test/resources/icons/RestAssured.svg" width="50"/></a>
-<a href="https://www.browserstack.com/"><img alt="Browserstack" height="50" src="src/test/resources/icons/browserstack.png" width="50"/></a>
-<a href="https://appium.io/"><img alt="Appium" height="50" src="src/test/resources/icons/Appium.svg" width="50"/></a>
-<a href="https://developer.android.com/studio"><img alt="Android Studio" height="50" src="src/test/resources/icons/android.svg" width="50"/></a>
-<a href="https://www.jenkins.io/"><img alt="Jenkins" height="50" src="src/test/resources/icons/Jenkins.svg" width="50"/></a>
-<a href="https://qameta.io/"><img alt="Allure TestOps" height="50" src="src/test/resources/icons/Allure_TO.svg" width="50"/></a>
-<a href="https://telegram.org/"><img alt="Telegram" height="50" src="src/test/resources/icons/Telegram.png" width="50"/></a>
-<a href="https://telegram.org/"><img alt="Telegram" height="50" src="src/test/resources/icons/lombok.png" width="50"/></a>
+<a href="https://www.jetbrains.com/idea/"><img alt="InteliJ IDEA" height="50" src="src/test/resources/images/Idea.svg" width="50"/></a>
+<a href="https://www.java.com/"><img alt="Java" height="50" src="src/test/resources/images/Java.svg" width="50"/></a>
+<a href="https://gradle.org/"><img alt="Gradle" height="50" src="src/test/resources/images/Gradle.svg" width="50"/></a>  
+<a href="https://junit.org/junit5/"><img alt="JUnit 5" height="50" src="src/test/resources/images/Junit5.svg" width="50"/></a>
+<a href="https://selenide.org/"><img alt="Selenide" height="50" src="src/test/resources/images/Selenide.svg" width="50"/></a>
+<a href="https://aerokube.com/selenoid/"><img alt="Selenoid" height="50" src="src/test/resources/images/Selenoid.svg" width="50"/></a>
+<a href="https://rest-assured.io/"><img alt="RestAssured" height="50" src="src/test/resources/images/RestAssured.svg" width="50"/></a>
+<a href="https://www.browserstack.com/"><img alt="Browserstack" height="50" src="src/test/resources/images/browserstack.png" width="50"/></a>
+<a href="https://appium.io/"><img alt="Appium" height="50" src="src/test/resources/images/Appium.svg" width="50"/></a>
+<a href="https://developer.android.com/studio"><img alt="Android Studio" height="50" src="src/test/resources/images/android.svg" width="50"/></a>
+<a href="https://www.jenkins.io/"><img alt="Jenkins" height="50" src="src/test/resources/images/Jenkins.svg" width="50"/></a>
+<a href="https://qameta.io/"><img alt="Allure TestOps" height="50" src="src/test/resources/images/Allure_TO.svg" width="50"/></a>
+<a href="https://telegram.org/"><img alt="Telegram" height="50" src="src/test/resources/images/Telegram.png" width="50"/></a>
+<a href="https://telegram.org/"><img alt="Telegram" height="50" src="src/test/resources/images/lombok.png" width="50"/></a>
 </div>
 
 ## Запуск тестов
@@ -115,28 +115,22 @@ gradle allureServe
 
 ## Интеграции
 ### Интеграция с <b><a target="_blank" href="https://jenkins.autotests.cloud/view/ArtemLe/job/ArtemLe_HH_web/allure/">Allure report</a></b>
-#### Диаграммы прохождения тестов
-
-`ALLURE REPORT` - отображает дату и время теста, общее количество запущенных тестов, а также диаграмму с процентом и
-количеством успешных, упавших и сломавшихся в процессе выполнения тестов <br/>
-`TREND` - отображает тенденцию выполнения тестов для всех запусков <br/>
-`SUITES` - отображает распределение тестов по сьютам <br/>
-`CATEGORIES` - отображает распределение неудачных тестов по типам дефектов
 
 #### Пример прохождения автотестов:
 
-   <img src="images/screenshots/allure-suites.png">
+   <img src="src/test/resources/images/allure_run_example.png">
+   <img src="src/test/resources/images/allure_run_example_2.png">
 
 ### Интеграция с <b><a target="_blank" href="https://allure.autotests.cloud/project/4450/dashboards">Allure TestOps</a></b>
 #### Пример прохождения автотестов:
 
-<img src="images/screenshots/allure-testops-dashboards.png">
+<img src="src/test/resources/images/testops_run_example.png">
 
 ### Уведомления в Telegram с использованием бота
 
 > Бот, созданный в Telegram, после завершения сборки отправляет сообщение с отчетом о прохождении тестов
 >
-<img src="images/screenshots/telegram-notification.png">
+<img src="src/test/resources/images/telegram_run_example.png">
 
 ## Технические особенности
 
