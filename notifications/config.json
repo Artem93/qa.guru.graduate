@@ -1,6 +1,6 @@
 {
   "base": {
-    "project": "${JOB_NAME}",
+    "project": "${JOB_BASE_NAME}",
     "environment": "",
     "comment": "@ArtemLepkin",
     "reportLink": "${BUILD_URL}",
