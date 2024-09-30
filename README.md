@@ -147,7 +147,7 @@ gradle allureServe
 
 <img src="src/test/resources/images/testops_run_example.png">
 
-### Уведомления в Telegram с использованием бота
+### Уведомления в [Telegram](https://t.me/+QMIfsEDMw-k2MTEy) с использованием бота
 
 > Бот, созданный в Telegram, после завершения сборки отправляет сообщение с отчетом о прохождении тестов
 >
