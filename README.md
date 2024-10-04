@@ -1,23 +1,26 @@
 # Проект автоматизации тестирования сервиса HeadHunter
 
+<img alt="HeadHunter" src="src/test/resources/images/hh.ru.png" />
+
+
 ## Содержание
 1. [Описание](#описание)
 2. [Ссылки](#ссылки)
-3. [Использованные Технологии и инструменты](#использованные-технологии-и-инструменты)
+3. [Использованные технологии и инструменты](#использованные-технологии-и-инструменты)
 4. [Запуск тестов](#запуск-тестов)
    - [Локальный запуск тестов](#локальный-запуск-тестов)
    - [Параметры web тестов](#параметры-web-тестов)
    - [Параметры android тестов](#параметры-android-тестов)
    - [Сборка тестов в Jenkins](#сборка-тестов-в-jenkins)
 5. [Интеграции](#интеграции)
-   - [Интеграция с Allure report](#интеграция-с-allure-report)
-   - [Интеграция с Allure TestOps](#интеграция-с-allure-testops)
+   - [Интеграция с Allure](#интеграция-с-ba-target_blank-hrefhttpsjenkinsautotestscloudviewartemleallureab)
+   - [Интеграция с Allure TestOps](#интеграция-с-ba-target_blank-hrefhttpsallureautotestscloudproject4450dashboardsallure-testopsab)
    - [Уведомления в Telegram](#уведомления-в-telegram-с-использованием-бота)
 6. [Технические особенности](#технические-особенности)
 
 ## Описание
 
-Данный проект направлен на автоматизацию Web/ API/ Android тестов для сервиса headhunter.  <br/>
+Данный проект направлен на автоматизацию Web/ API/ Android тестов для сервиса [HeadHunter](https://hh.ru/).  <br/>
 Headhunter - сервис, который помогает найти работу и подобрать персонал. <br/>
 
 ## Ссылки
@@ -48,8 +51,8 @@ Headhunter - сервис, который помогает найти работ
 <a href="https://www.jenkins.io/"><img alt="Jenkins" height="50" src="src/test/resources/images/Jenkins.svg" width="50"/></a>
 <a href="https://qameta.io/"><img alt="Allure TestOps" height="50" src="src/test/resources/images/Allure_TO.svg" width="50"/></a>
 <a href="https://telegram.org/"><img alt="Telegram" height="50" src="src/test/resources/images/Telegram.png" width="50"/></a>
-<a href="https://telegram.org/"><img alt="Telegram" height="50" src="src/test/resources/images/lombok.png" width="50"/></a>
-   <a href="https://telegram.org/"><img alt="Telegram" height="50" src="src/test/resources/images/jira.png" width="50"/></a>
+<a href="https://projectlombok.org/"><img alt="Lombok" height="50" src="src/test/resources/images/lombok.png" width="50"/></a>
+   <a href="https://www.atlassian.com/ru/software/jira"><img alt="Jira" height="50" src="src/test/resources/images/jira.png" width="50"/></a>
 </div>
 
 ## Запуск тестов
@@ -67,15 +70,15 @@ gradle clean test -Dtag=all
 ```
 -  WEB
 ```
-gradle clean -Dtag=web
+gradle clean test -Dtag=web
 ```
 - API
 ```
-gradle clean -Dtag=api 
+gradle clean test -Dtag=api 
 ```
 - Mobile
 ```
-gradle clean -Dtag=mobile
+gradle clean test -Dtag=mobile
 ```
 
 #### Параметры web тестов
@@ -129,14 +132,14 @@ gradle allureServe
 > У сборки нет параметров, достаточно нажать  `Build Now`.
 
 ## Интеграции
-### Интеграция с <b><a target="_blank" href="https://jenkins.autotests.cloud/view/ArtemLe/job/ArtemLe_HH_web/allure/">Allure report</a></b>
+### Интеграция с <b><a target="_blank" href="https://jenkins.autotests.cloud/view/ArtemLe/">Allure</a></b>
 
 #### Пример прохождения автотестов:
 
    <img src="src/test/resources/images/allure_run_example.png">
    <img src="src/test/resources/images/allure_run_example_2.png">
 
-### Интеграция с <b><a target="_blank" href="https://jira.autotests.cloud/browse/">Jira</a></b>
+### Интеграция с <b><a target="_blank" href="https://jira.autotests.cloud/projects/HOMEWORK/issues/">Jira</a></b>
 
 #### Пример задачи в jira:
 

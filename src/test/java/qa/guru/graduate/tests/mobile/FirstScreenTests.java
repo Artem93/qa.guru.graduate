@@ -10,18 +10,18 @@ import org.junit.jupiter.api.Tags;
 import org.junit.jupiter.api.Test;
 import qa.guru.graduate.pages.mobileScreens.FirstScreen;
 
-@Epic("Mobile tests")
-@Feature("Start screen")
-@DisplayName("Start screen tests")
+@Tags({
+        @Tag("mobile"),
+        @Tag("all")
+})
+@Owner("Артём Лепкин")
+@Epic("Мобильные автотесты")
+@Feature("Стартовый экран")
+@DisplayName("Тесты на проверку стартового экрана")
 public class FirstScreenTests extends MobileTestBase {
 
     private static final FirstScreen firstScreen = new FirstScreen();
 
-    @Tags({
-            @Tag("mobile"),
-            @Tag("all")
-    })
-    @Owner("Artem Lepkin")
     @Test
     @DisplayName("Проверка отображения элементов на первой странице")
     @AllureId("34661")

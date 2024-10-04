@@ -18,19 +18,19 @@ import static com.codeborne.selenide.Selenide.open;
 import static qa.guru.graduate.enums.SearchByEnum.NAME_VACANCY;
 import static qa.guru.graduate.helpers.Constants.*;
 
-@Epic("Web tests")
-@Feature("Extended Search")
-@DisplayName("Extended Search tests")
+@Tags({
+        @Tag("web"),
+        @Tag("all")
+})
+@Owner("Артём Лепкин")
+@Epic("Веб тесты")
+@Feature("Страница расширенного поиска")
+@DisplayName("Тесты на расширенный поиск")
 public class ExtendedSearchTests extends WebTestBase {
 
     private final ExtendedSearchPage extendedSearchPage = new ExtendedSearchPage();
     private final SearchResultsPage searchResultsPage = new SearchResultsPage();
 
-    @Tags({
-            @Tag("web"),
-            @Tag("all")
-    })
-    @Owner("Artem Lepkin")
     @Test
     @DisplayName("Проверка результатов расширенного поиска")
     @AllureId("34658")
@@ -47,11 +47,6 @@ public class ExtendedSearchTests extends WebTestBase {
                 .checkAllVacancyTitlesContainText(vacancyTagsQA);
     }
 
-    @Tags({
-            @Tag("web"),
-            @Tag("all")
-    })
-    @Owner("Artem Lepkin")
     @ParameterizedTest(name = "Проверка образования {0}")
     @EnumSource(EducationEnum.class)
     @DisplayName("Проверка применения настроек образования расширенного поиска")
@@ -69,13 +64,8 @@ public class ExtendedSearchTests extends WebTestBase {
                 .checkCheckedEducationCheckbox(education);
     }
 
-    @Tags({
-            @Tag("web"),
-            @Tag("all")
-    })
-    @Owner("Artem Lepkin")
     @Test
-    @DisplayName("Проверка применения настроек зараплаты расширенного поиска")
+    @DisplayName("Проверка применения настроек зарплаты расширенного поиска")
     @AllureId("34660")
     void checkApplySalarySettingsExtendedSearchTest() {
         open("/search/vacancy/advanced");
