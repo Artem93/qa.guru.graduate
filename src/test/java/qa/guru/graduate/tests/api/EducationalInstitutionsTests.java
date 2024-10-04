@@ -14,16 +14,16 @@ import qa.guru.graduate.pages.apiSteps.EducationalSteps;
 
 import static qa.guru.graduate.helpers.TestData.*;
 
-@Epic("Api tests")
-@Feature("Educational Institutions requests")
-@DisplayName("Educational Institutions request tests")
+@Tags({
+        @Tag("api"),
+        @Tag("all")
+})
+@Owner("Артём Лепкин")
+@Epic("Api автотесты")
+@Feature("Ручки образовательных учреждений")
+@DisplayName("Тесты на ручки образовательных учреждений")
 public class EducationalInstitutionsTests extends ApiTestBase {
 
-    @Tags({
-            @Tag("api"),
-            @Tag("all")
-    })
-    @Owner("Artem Lepkin")
     @Test
     @DisplayName("Проверка запроса инфо об учебном заведении с валидным Id")
     @AllureId("34656")
@@ -36,11 +36,6 @@ public class EducationalInstitutionsTests extends ApiTestBase {
                 .comparisonFields(testModel, response, "Проверка ответа на валидность");
     }
 
-    @Tags({
-            @Tag("api"),
-            @Tag("all")
-    })
-    @Owner("Artem Lepkin")
     @ValueSource(strings = {";", "q", "я", "string"})
     @ParameterizedTest(name = "Невалидный id '' {0} ''")
     @DisplayName("Проверка запроса инфо об учебном заведении с невалидным Id")
@@ -54,11 +49,6 @@ public class EducationalInstitutionsTests extends ApiTestBase {
                 .comparisonFields(testModel.getErrors(), response.getErrors(), "Проверка корректности вернувшейся ошибки");
     }
 
-    @Tags({
-            @Tag("api"),
-            @Tag("all")
-    })
-    @Owner("Artem Lepkin")
     @Test
     @DisplayName("Проверка запроса инфо об учебном заведении с валидным параметрами Id и locale")
     @AllureId("34654")

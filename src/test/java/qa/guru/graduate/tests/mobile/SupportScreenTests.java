@@ -11,21 +11,21 @@ import org.junit.jupiter.api.Test;
 import qa.guru.graduate.pages.mobileScreens.FirstScreen;
 import qa.guru.graduate.pages.mobileScreens.SupportScreen;
 
-@Epic("Mobile tests")
-@Feature("Support screen")
-@DisplayName("Support screen tests")
+@Tags({
+        @Tag("mobile"),
+        @Tag("all")
+})
+@Owner("Артём Лепкин")
+@Epic("Мобильные автотесты")
+@Feature("Экран тех. поддержки")
+@DisplayName("Тесты на проверку экрана тех. поддержки")
 public class SupportScreenTests extends MobileTestBase {
 
     private static final SupportScreen supportScreen = new SupportScreen();
     private static final FirstScreen firstScreen = new FirstScreen();
 
-    @Tags({
-            @Tag("mobile"),
-            @Tag("all")
-    })
-    @Owner("Artem Lepkin")
     @Test
-    @DisplayName("Проверка отображения экрана саппорта")
+    @DisplayName("Проверка отображения экрана тех. поддержки")
     @AllureId("34663")
     void checkSupportScreenTest() {
         firstScreen

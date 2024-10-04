@@ -15,9 +15,14 @@ import qa.guru.graduate.pages.webPages.*;
 import static com.codeborne.selenide.Selenide.open;
 import static qa.guru.graduate.helpers.Constants.searchRequestQa;
 
-@Epic("Web tests")
-@Feature("General page elements")
-@DisplayName("General page elements tests")
+@Tags({
+        @Tag("web"),
+        @Tag("all")
+})
+@Owner("Артём Лепкин")
+@Epic("Веб тесты")
+@Feature("Главная страница")
+@DisplayName("Тесты на проверку элементов главной страницы")
 public class GeneralePageTests extends WebTestBase {
 
     private final GeneralPage generalPage = new GeneralPage();
@@ -26,11 +31,6 @@ public class GeneralePageTests extends WebTestBase {
     private final ModalLoginPage modalLoginPage = new ModalLoginPage();
     private final SearchResultsPage searchResultsPage = new SearchResultsPage();
 
-    @Tags({
-            @Tag("web"),
-            @Tag("all")
-    })
-    @Owner("Artem Lepkin")
     @Test
     @DisplayName("Проверка кнопок в хедере страницы")
     @AllureId("34664")
@@ -44,11 +44,6 @@ public class GeneralePageTests extends WebTestBase {
                 .checkApplicantServicesElement();
     }
 
-    @Tags({
-            @Tag("web"),
-            @Tag("all")
-    })
-    @Owner("Artem Lepkin")
     @ParameterizedTest(name = "Смена города на {0}")
     @ValueSource(strings = {"Воронеж", "Гомель"})
     @DisplayName("Проверка смены города.")
@@ -65,11 +60,6 @@ public class GeneralePageTests extends WebTestBase {
 
     }
 
-    @Tags({
-            @Tag("web"),
-            @Tag("all")
-    })
-    @Owner("Artem Lepkin")
     @Test
     @DisplayName("Переход на страницу для работодателей")
     @AllureId("34667")
@@ -83,11 +73,6 @@ public class GeneralePageTests extends WebTestBase {
                 .checkVisiblePublishVacancyButton();
     }
 
-    @Tags({
-            @Tag("web"),
-            @Tag("all")
-    })
-    @Owner("Artem Lepkin")
     @Test
     @DisplayName("Проверка выполнения поискового запроса")
     @AllureId("34665")

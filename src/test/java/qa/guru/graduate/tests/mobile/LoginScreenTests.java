@@ -12,19 +12,19 @@ import qa.guru.graduate.enums.AuthButtonsEnum;
 import qa.guru.graduate.pages.mobileScreens.FirstScreen;
 import qa.guru.graduate.pages.mobileScreens.LoginScreen;
 
-@Epic("Mobile tests")
-@Feature("Login screen")
-@DisplayName("Login screen tests")
+@Tags({
+        @Tag("mobile"),
+        @Tag("all")
+})
+@Owner("Артём Лепкин")
+@Epic("Мобильные автотесты")
+@Feature("Экран логина")
+@DisplayName("Тесты на проверку экрана логина")
 public class LoginScreenTests extends MobileTestBase {
 
     private static final LoginScreen loginScreen = new LoginScreen();
     private static final FirstScreen firstScreen = new FirstScreen();
 
-    @Tags({
-            @Tag("mobile"),
-            @Tag("all")
-    })
-    @Owner("Artem Lepkin")
     @Test
     @DisplayName("Проверка отображения списка методов логина")
     @AllureId("34662")

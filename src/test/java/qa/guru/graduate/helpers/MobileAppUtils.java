@@ -20,7 +20,7 @@ public class MobileAppUtils {
 
     public static String getAppPath() {
         String appPath = "src/test/resources/apps/hh.apk";
-        String appUrl = "https://psv4.userapi.com/c909618/u32114269/docs/d50/6f16a4a9a54b/hh.apk";
+        String appUrl = "https://psv4.userapi.com/c909618/u32114269/docs/d50/d15609469ee3/hh.apk";
         File app = new File(appPath);
         if (!app.exists()) {
             try (InputStream in = new URL(appUrl).openStream()) {
