@@ -1,8 +1,8 @@
 # Проект автоматизации тестирования сервиса HeadHunter
 
-
+<a href="https://hh.ru/">
 <img alt="HeadHunter" src="src/test/resources/images/hh.ru.png" style="width:100%;" />
-
+</a>
 
 ## Содержание
 1. [Описание](#описание)
