@@ -1,7 +1,7 @@
 # Проект автоматизации тестирования сервиса HeadHunter
 
 <a href="https://hh.ru/">
-<img alt="HeadHunter" src="src/test/resources/images/hh.ru.png" style="width:100%;" />
+<img alt="HeadHunter" src="images/hh.jpg" style="width:100%;" />
 </a>
 
 ## Содержание
@@ -42,21 +42,21 @@ Headhunter - сервис, который помогает найти работ
 ## Использованные Технологии и инструменты
 
 <div align="center">
-<a href="https://www.jetbrains.com/idea/"><img alt="InteliJ IDEA" height="50" src="media/images/Idea.svg" width="50"/></a>
-<a href="https://www.java.com/"><img alt="Java" height="50" src="media/images/Java.svg" width="50"/></a>
-<a href="https://gradle.org/"><img alt="Gradle" height="50" src="media/images/Gradle.svg" width="50"/></a>  
-<a href="https://junit.org/junit5/"><img alt="JUnit 5" height="50" src="media/images/Junit5.svg" width="50"/></a>
-<a href="https://selenide.org/"><img alt="Selenide" height="50" src="media/images/Selenide.svg" width="50"/></a>
-<a href="https://aerokube.com/selenoid/"><img alt="Selenoid" height="50" src="media/images/Selenoid.svg" width="50"/></a>
-<a href="https://rest-assured.io/"><img alt="RestAssured" height="50" src="media/images/RestAssured.svg" width="50"/></a>
-<a href="https://www.browserstack.com/"><img alt="Browserstack" height="50" src="media/images/browserstack.png" width="50"/></a>
-<a href="https://appium.io/"><img alt="Appium" height="50" src="media/images/Appium.svg" width="50"/></a>
-<a href="https://developer.android.com/studio"><img alt="Android Studio" height="50" src="media/images/android.svg" width="50"/></a>
-<a href="https://www.jenkins.io/"><img alt="Jenkins" height="50" src="media/images/Jenkins.svg" width="50"/></a>
-<a href="https://qameta.io/"><img alt="Allure TestOps" height="50" src="media/images/Allure_TO.svg" width="50"/></a>
-<a href="https://telegram.org/"><img alt="Telegram" height="50" src="media/images/Telegram.png" width="50"/></a>
-<a href="https://projectlombok.org/"><img alt="Lombok" height="50" src="media/images/lombok.png" width="50"/></a>
-   <a href="https://www.atlassian.com/ru/software/jira"><img alt="Jira" height="50" src="media/images/jira.png" width="50"/></a>
+<a href="https://www.jetbrains.com/idea/"><img alt="InteliJ IDEA" height="50" src="images/Idea.svg" width="50"/></a>
+<a href="https://www.java.com/"><img alt="Java" height="50" src="images/Java.svg" width="50"/></a>
+<a href="https://gradle.org/"><img alt="Gradle" height="50" src="images/Gradle.svg" width="50"/></a>  
+<a href="https://junit.org/junit5/"><img alt="JUnit 5" height="50" src="images/Junit5.svg" width="50"/></a>
+<a href="https://selenide.org/"><img alt="Selenide" height="50" src="images/Selenide.svg" width="50"/></a>
+<a href="https://aerokube.com/selenoid/"><img alt="Selenoid" height="50" src="images/Selenoid.svg" width="50"/></a>
+<a href="https://rest-assured.io/"><img alt="RestAssured" height="50" src="images/RestAssured.svg" width="50"/></a>
+<a href="https://www.browserstack.com/"><img alt="Browserstack" height="50" src="images/browserstack.png" width="50"/></a>
+<a href="https://appium.io/"><img alt="Appium" height="50" src="images/Appium.svg" width="50"/></a>
+<a href="https://developer.android.com/studio"><img alt="Android Studio" height="50" src="images/android.svg" width="50"/></a>
+<a href="https://www.jenkins.io/"><img alt="Jenkins" height="50" src="images/Jenkins.svg" width="50"/></a>
+<a href="https://qameta.io/"><img alt="Allure TestOps" height="50" src="images/Allure_TO.svg" width="50"/></a>
+<a href="https://telegram.org/"><img alt="Telegram" height="50" src="images/Telegram.png" width="50"/></a>
+<a href="https://projectlombok.org/"><img alt="Lombok" height="50" src="images/lombok.png" width="50"/></a>
+   <a href="https://www.atlassian.com/ru/software/jira"><img alt="Jira" height="50" src="images/jira.png" width="50"/></a>
 </div>
 
 ## Запуск тестов
@@ -140,32 +140,32 @@ gradle allureServe
 
 #### Пример прохождения автотестов:
 
-   <img src="media/images/allure_run_example.png">
-   <img src="media/images/allure_run_example_2.png">
+   <img src="images/allure_run_example.png">
+   <img src="images/allure_run_example_2.png">
 
 ### Интеграция с <b><a target="_blank" href="https://jira.autotests.cloud/projects/HOMEWORK/issues/">Jira</a></b>
 
 #### Пример задачи в jira:
 
-   <img src="media/images/jira_example.png">
+   <img src="images/jira_example.png">
 
 ### Интеграция с <b><a target="_blank" href="https://allure.autotests.cloud/project/4450/dashboards">Allure TestOps</a></b>
 #### Пример прохождения автотестов:
 
-<img src="media/images/testops_run_example.png">
+<img src="images/testops_run_example.png">
 
 ### Уведомления в [Telegram](https://t.me/+QMIfsEDMw-k2MTEy) с использованием бота
 
 > Бот, созданный в Telegram, после завершения сборки отправляет сообщение с отчетом о прохождении тестов
 >
-<img src="media/images/telegram_run_example.png">
+<img src="images/telegram_run_example.png">
 
 ## Примеры прохождения автотестов
 ### Мобильные
-<img src="media/images/mobile_run.gif" height="500">
+<img src="images/mobile_run.gif" height="500">
 
 ### Web
-<img src="media/images/web_run.gif" height="500">
+<img src="images/web_run.gif" height="500">
 
 ## Технические особенности
 
